@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>gubbe.png</Source>
+      <Name>gubbe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spel\bin\x86\Debug\Content\gubbe.xnb</Output>
+      <Time>2013-09-14T13:21:44+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fiende.png</Source>
+      <Name>fiende</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spel\bin\x86\Debug\Content\fiende.xnb</Output>
+      <Time>2013-09-25T19:36:48+02:00</Time>
+    </Item>
+    <Item>
+      <Source>skott.png</Source>
+      <Name>skott</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spel\bin\x86\Debug\Content\skott.xnb</Output>
+      <Time>2013-10-06T09:30:12+02:00</Time>
+    </Item>
+    <Item>
+      <Source>FirstSpriteSheet.png</Source>
+      <Name>FirstSpriteSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spel\bin\x86\Debug\Content\FirstSpriteSheet.xnb</Output>
+      <Time>2013-11-03T15:46:50.3064704+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spelContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spel\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spelContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spel\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-05-14T19:35:21.3047945+02:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
