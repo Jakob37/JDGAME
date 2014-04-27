@@ -1,2 +1,0 @@
-C:\Users\monwil\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spelContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Jakob\Documents\Visual Studio 2010\Projects\JD spel\JD spel\JD spelContent\obj\x86\Debug\ResolveAssemblyReference.cache

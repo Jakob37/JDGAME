@@ -1,6 +1,0 @@
-Arg fiende (0,0,21,25)
-Arg gubbe (25,0,15,29)
-
-Gult skott (40,5,5,5)
-Blått skott (40,0,5,5)
-Lila skott (40,10,5,5)

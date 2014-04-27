@@ -1,4 +1,0 @@
-Content\gubbe.xnb
-Content\fiende.xnb
-Content\skott.xnb
-Content\FirstSpriteSheet.xnb
