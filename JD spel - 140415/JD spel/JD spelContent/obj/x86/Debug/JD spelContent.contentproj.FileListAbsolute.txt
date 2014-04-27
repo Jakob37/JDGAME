@@ -20,3 +20,4 @@ C:\Users\Jakob\Dropbox\Daniel-Jakob-Mapp\JD spel - 140406\JD spel\JD spelContent
 C:\Users\user\Dropbox\JD spel - 140406\JD spel\JD spelContent\obj\x86\Debug\JD spelContent.contentprojResolveAssemblyReference.cache
 C:\Users\user\Dropbox\JD spel - 140415\JD spel\JD spelContent\obj\x86\Debug\JD spelContent.contentprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spelContent\obj\x86\Debug\JD spelContent.contentprojResolveAssemblyReference.cache
+C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spelContent\obj\x86\Debug\JD spelContent.contentprojResolveAssemblyReference.cache

@@ -102,9 +102,14 @@ namespace JD_spel
             {
                 FiendeMyra myra = new FiendeMyra(game, spriteSheet, gubbe, this);
                 myra.position = new Vector2(random1.Next(870), random1.Next(670));
-                myra.SetRandomDirection(random1);
+                myra.SetExternalRandom(random1);
+                myra.SetRandomDirection();
                 spelObjektLista.Add(myra);
             }
+
+            FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet, gubbe, this);
+            egg.position = new Vector2(300, 300);
+            spelObjektLista.Add(egg);
         }
 
         private void MakeLevel3()

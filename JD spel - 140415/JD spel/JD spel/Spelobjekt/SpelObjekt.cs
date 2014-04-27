@@ -48,13 +48,13 @@ namespace JD_spel
             }
         }
 
-        public virtual void Rita(SpriteBatch spriteBatch) 
+        public virtual void Rita(SpriteBatch spriteBatch)
         {
             if (lever)
             {
                 spriteBatch.Draw(bild.Texture, position, bild.SourceRectangle, Color.White);
-            } 
-        
+            }
+
         }
 
         public Rectangle GetKanter()
@@ -67,10 +67,22 @@ namespace JD_spel
             liv -= skada;
         }
 
+        public void SetExternalRandom(Random rand)
+        {
+            random = rand;
+        }
+
         public void SetRandomDirection(Random rand)
         {
             riktning = new Vector2((float)(rand.NextDouble() * 2 - 1),
                 (float)(rand.NextDouble() * 2 - 1));
+            riktning = GlobalFunctions.ScaleDirection(riktning);
+        }
+
+        public void SetRandomDirection()
+        {
+            riktning = new Vector2((float)(random.NextDouble() * 2 - 1),
+                (float)(random.NextDouble() * 2 - 1));
             riktning = GlobalFunctions.ScaleDirection(riktning);
         }
     }
