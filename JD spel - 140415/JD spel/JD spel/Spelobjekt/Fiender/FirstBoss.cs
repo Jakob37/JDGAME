@@ -19,8 +19,7 @@ namespace JD_spel
         {
             //importera ny spriteSheet
             bild = spriteSheet.GetSubSprite(new Rectangle(142, 2, 32, 35));
-            //bild = spriteSheet.GetSubSprite(new Rectangle(117, 0, 18, 27));
-            hastighet = 2F;
+            hastighet = 2f;
             movement = FiendeMovement.Follow;
             liv = 500;
             skada = 1;

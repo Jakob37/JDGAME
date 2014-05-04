@@ -23,8 +23,6 @@ namespace JD_spel
 
             knappar = new List<Clickable>();
 
-            
-            
 
             LevelMenyExitKnapp levelExit = new LevelMenyExitKnapp(game, spriteSheet, new Vector2(410, 550));
             levelExit.Initialize();
@@ -38,9 +36,13 @@ namespace JD_spel
             Level3Knapp level3 = new Level3Knapp(game, spriteSheet, new Vector2(400, 200));
             level3.Initialize();
 
+            Level4Knapp level4 = new Level4Knapp(game, spriteSheet, new Vector2(500, 200));
+            level4.Initialize();
+
             knappar.Add(level1);
             knappar.Add(level2);
             knappar.Add(level3);
+            knappar.Add(level4);
             
             knappar.Add(levelExit);
 
@@ -67,7 +69,6 @@ namespace JD_spel
         public override void Rita(SpriteBatch spriteBatch)
         {
             base.Rita(spriteBatch);
-
            
             spriteBatch.DrawString(font, "Choose Level", new Vector2(200, 100), Color.DarkSlateGray);
 

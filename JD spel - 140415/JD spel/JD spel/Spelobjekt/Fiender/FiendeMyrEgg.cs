@@ -10,7 +10,7 @@ namespace JD_spel
     class FiendeMyrEgg : Fiende
     {
         private int spawnCounter;
-
+        private int numberOfAnts;
 
         public FiendeMyrEgg(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
             : base(game, spriteSheet, gubbe, presentState)
@@ -22,7 +22,7 @@ namespace JD_spel
             hastighet = 0.1f;
             movement = FiendeMovement.Common; 
 
-            liv = 150;
+            liv = 80;
             skada = 1;
 
             riktning = new Vector2((float)(random.NextDouble() * 2 - 1),
@@ -30,6 +30,8 @@ namespace JD_spel
             riktning = GlobalFunctions.ScaleDirection(riktning);
 
             spawnCounter = 5000 + (int)(5000 * random.NextDouble());
+
+            numberOfAnts = random.Next(5) + 5;
         }
 
         public override void Uppdatera(GameTime gameTime)
@@ -47,7 +49,7 @@ namespace JD_spel
 
         private void Spawn()
         {
-            for (int n = 0; n < 10; n++)
+            for (int n = 0; n < numberOfAnts; n++)
             {
                 FiendeMyra myra = new FiendeMyra(game, spriteSheet, gubbe, presentState);
                 myra.position = position;
