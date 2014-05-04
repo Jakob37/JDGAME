@@ -37,6 +37,8 @@ namespace JD_spel
         public HowToPlayState howToPlayState;
         public LevelMenyState levelMenyState;
 
+        private Song happySong;
+
         //Detta körs när spelet skapas
         public Game1()
         {
@@ -77,6 +79,8 @@ namespace JD_spel
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            happySong = Content.Load<Song>("HappySong");
         }
 
         //Denna kommer vi inte använda nu.
@@ -90,6 +94,12 @@ namespace JD_spel
             base.Update(gameTime);
 
             runningState.Uppdatera(gameTime);
+
+            KeyboardState currentKeyboard = Keyboard.GetState();
+            if (currentKeyboard.IsKeyDown(Keys.M))
+            {
+                MediaPlayer.Play(happySong);
+            }
         }
 
         //Detta anropas varje gång spelet uppdaterats. Här finns logik som berättar hur spelet ska ritas upp.

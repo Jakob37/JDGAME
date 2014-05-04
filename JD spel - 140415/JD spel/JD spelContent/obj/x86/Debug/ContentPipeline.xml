@@ -73,6 +73,16 @@
       <Output>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\howToPlayFont.xnb</Output>
       <Time>2014-04-27T09:34:32.7839553+02:00</Time>
     </Item>
+    <Item>
+      <Source>HappySong.mp3</Source>
+      <Name>HappySong</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\HappySong.xnb</Output>
+      <Extra>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\HappySong.wma</Extra>
+      <Time>2014-05-04T11:52:53.9483633+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
