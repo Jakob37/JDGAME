@@ -52,6 +52,11 @@ namespace JD_spel
                         MakeLevel3();
                         break;
                     }
+                case 4:
+                    {
+                        MakeLevel4();
+                        break;
+                    }
             }
         }
 
@@ -94,10 +99,28 @@ namespace JD_spel
         private void MakeLevel2()
         {
             //Boss
-            //Random random1 = new Random();
-            //FirstBoss f1 = new FirstBoss(game, spriteSheet, gubbe);
-            //f1.position = new Vector2(random1.Next(870), random1.Next(670));
-            //spelObjektLista.Add(f1);
+            Random random1 = new Random();
+            FirstBoss f1 = new FirstBoss(game, spriteSheet, gubbe, this);
+            f1.position = new Vector2(random1.Next(870), random1.Next(670));
+            spelObjektLista.Add(f1);
+            
+        }
+
+        private void MakeLevel3()
+        {
+            //VanligFiende
+
+            for (int n = 0; n < 50; n++)
+            {
+                VanligFiende f1 = new VanligFiende(game, spriteSheet, gubbe, this);
+                f1.position = new Vector2(random1.Next(870), random1.Next(670));
+                f1.SetRandomDirection(random1);
+                spelObjektLista.Add(f1);
+            }
+        }
+
+        private void MakeLevel4()
+        {
             for (int n = 0; n < 10; n++)
             {
                 FiendeMyra myra = new FiendeMyra(game, spriteSheet, gubbe, this);
@@ -111,41 +134,11 @@ namespace JD_spel
             egg.position = new Vector2(300, 300);
             spelObjektLista.Add(egg);
         }
-
-        private void MakeLevel3()
-        {
-            //VanligFiende
-
-            for (int n = 0; n < 50; n++)
-            {
-                VanligFiende f1 = new VanligFiende(game, spriteSheet, gubbe, this);
-                f1.position = new Vector2(random1.Next(870), random1.Next(670));
-
-                f1.SetRandomDirection(random1);
-                
-                spelObjektLista.Add(f1);
-            }
-        }
-        private void MakeLevel4()
-        {
-            //fiende myra
-            for (int n = 0; n < 10; n++)
-            {
-                FiendeMyra myra = new FiendeMyra(game, spriteSheet, gubbe, this);
-                myra.position = new Vector2(random1.Next(870), random1.Next(670));
-                myra.SetRandomDirection(random1);
-                spelObjektLista.Add(myra);
-            }
-        }
         #endregion
 
         public override void Uppdatera(GameTime gameTime)
         {
             base.Uppdatera(gameTime);
-
-            
-            //KollaKollisioner();
-
             Escape();
         }
 

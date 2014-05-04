@@ -111,6 +111,7 @@
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level3Knapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level1Knapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level2Knapp.cs" />
+    <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level4Knapp.cs" />
     <Compile Include="Knappar\Instanser\MenyState\HowToPlayKnapp.cs" />
     <Compile Include="Spelobjekt\Fiender\FiendeMyra.cs" />
     <Compile Include="Spelobjekt\Fiender\FiendeMyrEgg.cs" />
