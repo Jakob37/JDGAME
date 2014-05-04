@@ -60,7 +60,8 @@ namespace JD_spel
 
             if (knappNerTryckt == 5)
                 gubbe.skada = 1;
-            
+            if (knappNerTryckt == 6)
+                gubbe.shield = 20;
         }
         private void Escape()
         {
@@ -137,12 +138,57 @@ namespace JD_spel
                 spriteBatch.DrawString(font, "Try to kill this enemy", new Vector2(200, 130), Color.Red);
                 spriteBatch.DrawString(font, "Kill this enemy to continue", new Vector2(200, 160), Color.Red);
             }
-
-            if (knappNerTryckt >= 4 && gubbe.lever)
+            if (knappNerTryckt == 6 && gubbe.lever)
             {
-                spriteBatch.DrawString(font, "Liv: " + gubbe.liv.ToString(), new Vector2(50, 50), Color.Red);
+                spriteBatch.DrawString(font, "Everytime you shoot your Energi will go down", new Vector2(200, 100), Color.Red);
+                spriteBatch.DrawString(font, "If you run out of Energi can you not shoot", new Vector2(200, 130), Color.Red);
+                spriteBatch.DrawString(font, "The energi will recharge over time", new Vector2(200, 160), Color.Red);
+                spriteBatch.DrawString(font, "Press Enter to continue", new Vector2(200, 190), Color.Red);
+            }
+            if (knappNerTryckt == 7 && gubbe.lever)
+            {
+                spriteBatch.DrawString(font, "When you start a level you have 20 shield", new Vector2(200, 100), Color.Red);
+                spriteBatch.DrawString(font, "All damage you take when you have a shield", new Vector2(200, 130), Color.Red);
+                spriteBatch.DrawString(font, "will damage the shield insted", new Vector2(200, 160), Color.Red);
+                spriteBatch.DrawString(font, "Press Enter to continue", new Vector2(200, 190), Color.Red);
+            }
+            if (knappNerTryckt == 8 && gubbe.lever)
+            {
+                spriteBatch.DrawString(font, "If you press Ctrl you make a new shield", new Vector2(200, 100), Color.Red);
+                spriteBatch.DrawString(font, "That shield take 50 energi to make", new Vector2(200, 130), Color.Red);
+                spriteBatch.DrawString(font, "but will also have 50 in shield", new Vector2(200, 160), Color.Red);
+                spriteBatch.DrawString(font, "Use a shield to continue", new Vector2(200, 190), Color.Red);
+            }
+            if (knappNerTryckt == 9 && gubbe.lever)
+            {
+                spriteBatch.DrawString(font, "You have different weapons that you can shoot with", new Vector2(220, 100), Color.Red);
+                spriteBatch.DrawString(font, "You switch weapon by pressing the numbers", new Vector2(220, 130), Color.Red);
+                spriteBatch.DrawString(font, "Press Enter to continue", new Vector2(220, 160), Color.Red);
+            }
+            if (knappNerTryckt == 10 && gubbe.lever)
+            {
+                spriteBatch.DrawString(font, "Here is a list of all weapons", new Vector2(220, 100), Color.Red);
+                spriteBatch.DrawString(font, "1. Basic Skott", new Vector2(220, 130), Color.Red);
+                spriteBatch.DrawString(font, "Very low cost, Very low damage, full range", new Vector2(220, 160), Color.Red);
+                spriteBatch.DrawString(font, "Good to kill one hit Enemies", new Vector2(220, 190), Color.Red);
+                spriteBatch.DrawString(font, "2. Power Skott", new Vector2(220, 250), Color.Red);
+                spriteBatch.DrawString(font, "High cost, High damage, medium range", new Vector2(220, 280), Color.Red);
+                spriteBatch.DrawString(font, "Good to kill High health Enemies", new Vector2(220, 310), Color.Red); spriteBatch.DrawString(font, "2. Power Skott", new Vector2(200, 250), Color.Red);
+                spriteBatch.DrawString(font, "3. Basic Laser", new Vector2(220, 370), Color.Red);
+                spriteBatch.DrawString(font, "High cost, High damage, medium range", new Vector2(220, 400), Color.Red);
+                spriteBatch.DrawString(font, "Good to kill many Enemies at once", new Vector2(220, 430), Color.Red); spriteBatch.DrawString(font, "2. Power Skott", new Vector2(200, 250), Color.Red);
+                
             }
 
+
+            if (knappNerTryckt >= 4 && gubbe.lever)
+                spriteBatch.DrawString(font, "Liv: " + gubbe.liv.ToString(), new Vector2(50, 50), Color.Red);
+            if (knappNerTryckt >= 6 && gubbe.lever)
+                spriteBatch.DrawString(font, "Energi: " + gubbe.currentEnergi.ToString(), new Vector2(50, 70), Color.Blue);
+            if (knappNerTryckt >= 7 && gubbe.lever)
+                spriteBatch.DrawString(font, "Shield: " + gubbe.GetSpelarShield().ToString(), new Vector2(50, 90), Color.LightGreen);
+            if (knappNerTryckt >= 9 && gubbe.lever)
+                spriteBatch.DrawString(font, "Vapen: " + gubbe.GetSpelarMagi().ToString(), new Vector2(50, 110), Color.Yellow);
             if (!gubbe.lever)
             {
                 spriteBatch.DrawString(font, "Oh No!!! You died!", new Vector2(200, 100), Color.Red);
@@ -164,9 +210,14 @@ namespace JD_spel
                 knappNerTryckt = 5;
             else if (knappNerTryckt == 5 && !fiende1.lever && gubbe.lever)
                 knappNerTryckt = 6;
-            
-
-
+            else if (currentKeyboardState.IsKeyDown(Keys.Enter) && knappNerTryckt == 6 && previousKeyboardState.IsKeyUp(Keys.Enter) && gubbe.lever)
+                knappNerTryckt = 7;
+            else if (currentKeyboardState.IsKeyDown(Keys.Enter) && knappNerTryckt == 7 && previousKeyboardState.IsKeyUp(Keys.Enter) && gubbe.lever)
+                knappNerTryckt = 8;
+            else if (gubbe.shield == 50 && knappNerTryckt == 8 && gubbe.lever)
+                knappNerTryckt = 9;
+            else if (currentKeyboardState.IsKeyDown(Keys.Enter) && knappNerTryckt == 9 && previousKeyboardState.IsKeyUp(Keys.Enter) && gubbe.lever)
+                knappNerTryckt = 10;
         }
     }
 }
