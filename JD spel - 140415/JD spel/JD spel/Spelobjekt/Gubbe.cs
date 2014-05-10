@@ -116,8 +116,10 @@ namespace JD_spel
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && previousKeyboardState.IsKeyUp(Keys.LeftShift) && lever
                  && currentEnergi >= energiCost)
             {
+                Vector2 tillFalligRikning = new Vector2(1, 0);
                 BasicSkott s = new BasicSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(position, riktning);
+                s.SkjutSkott(position, tillFalligRikning);
+                //s.SkjutSkott(position, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
