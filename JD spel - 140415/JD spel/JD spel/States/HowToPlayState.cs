@@ -173,11 +173,16 @@ namespace JD_spel
                 spriteBatch.DrawString(font, "Good to kill one hit Enemies", new Vector2(220, 190), Color.Red);
                 spriteBatch.DrawString(font, "2. Power Skott", new Vector2(220, 250), Color.Red);
                 spriteBatch.DrawString(font, "High cost, High damage, medium range", new Vector2(220, 280), Color.Red);
-                spriteBatch.DrawString(font, "Good to kill High health Enemies", new Vector2(220, 310), Color.Red); spriteBatch.DrawString(font, "2. Power Skott", new Vector2(200, 250), Color.Red);
+                spriteBatch.DrawString(font, "Good to kill High health Enemies", new Vector2(220, 310), Color.Red);
                 spriteBatch.DrawString(font, "3. Basic Laser", new Vector2(220, 370), Color.Red);
                 spriteBatch.DrawString(font, "High cost, High damage, medium range", new Vector2(220, 400), Color.Red);
-                spriteBatch.DrawString(font, "Good to kill many Enemies at once", new Vector2(220, 430), Color.Red); spriteBatch.DrawString(font, "2. Power Skott", new Vector2(200, 250), Color.Red);
-                
+                spriteBatch.DrawString(font, "Good to kill many Enemies at once", new Vector2(220, 430), Color.Red);
+                spriteBatch.DrawString(font, "Press Enter to continue", new Vector2(220, 460), Color.Red);
+            }
+            if (knappNerTryckt == 11 && gubbe.lever)
+            {
+                spriteBatch.DrawString(font, "Now is the tutorial done!!", new Vector2(220, 100), Color.Red);
+                spriteBatch.DrawString(font, "You can always press Escape to go Back a Stage", new Vector2(220, 130), Color.Red);
             }
 
 
@@ -218,6 +223,8 @@ namespace JD_spel
                 knappNerTryckt = 9;
             else if (currentKeyboardState.IsKeyDown(Keys.Enter) && knappNerTryckt == 9 && previousKeyboardState.IsKeyUp(Keys.Enter) && gubbe.lever)
                 knappNerTryckt = 10;
+            else if (currentKeyboardState.IsKeyDown(Keys.Enter) && knappNerTryckt == 10 && previousKeyboardState.IsKeyUp(Keys.Enter) && gubbe.lever)
+                knappNerTryckt = 11;
         }
     }
 }
