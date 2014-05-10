@@ -99,6 +99,7 @@ namespace JD_spel
             if (currentKeyboard.IsKeyDown(Keys.M))
             {
                 MediaPlayer.Play(happySong);
+                MediaPlayer.IsRepeating = true;
             }
         }
 
