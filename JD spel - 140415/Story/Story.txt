@@ -1,0 +1,3 @@
+Gubbe vill bemästra elementen.
+Finns fiender som vill hindra honom. (svarta gubbar)
+Finns fiender för varje element.
