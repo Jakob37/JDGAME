@@ -115,7 +115,9 @@
     <Compile Include="Knappar\Instanser\MenyState\HowToPlayKnapp.cs" />
     <Compile Include="Spelobjekt\Fiender\FiendeMyra.cs" />
     <Compile Include="Spelobjekt\Fiender\FiendeMyrEgg.cs" />
+    <Compile Include="Spelobjekt\Fiender\StoneTower.cs" />
     <Compile Include="Spelobjekt\Skott\BasicLaser.cs" />
+    <Compile Include="Spelobjekt\Skott\BigEnemyStone.cs" />
     <Compile Include="Spelobjekt\Skott\PowerSkott.cs" />
     <Compile Include="Spelobjekt\Skott\SpelarSkott.cs" />
     <Compile Include="States\HowToPlayState.cs" />
