@@ -17,14 +17,19 @@ namespace JD_spel
         private Random random1;
 
         private SpriteFont font;
-    
+        private BackgroundSprite backgroundSprite;
+
         public LevelState(Game1 game, Sprite spriteSheet)
             : base(game)
         {
             this.spriteSheet = spriteSheet;
             font = game.Content.Load<SpriteFont>("vanligFont");
             random1 = new Random();
+
+            Sprite tile = new Sprite(game.Content.Load<Texture2D>("Tiles/MudTile"));
+            backgroundSprite = new BackgroundSprite(game.Window.ClientBounds.Width, game.Window.ClientBounds.Height, tile);
         }
+
         public override void Initialize()
         { 
             base.Initialize();
@@ -168,6 +173,8 @@ namespace JD_spel
 
         public override void Rita(SpriteBatch spriteBatch)
         {
+            backgroundSprite.Draw(spriteBatch);
+
             base.Rita(spriteBatch);
 
             //Skriv saker

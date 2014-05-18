@@ -25,8 +25,8 @@ namespace JD_spel
 
         public Sprite()
         {
-        Texture = null;
-        SourceRectangle = null;
+            Texture = null;
+            SourceRectangle = null;
         }
 
         public Sprite(Texture2D tex, Nullable<Rectangle> rect = null)

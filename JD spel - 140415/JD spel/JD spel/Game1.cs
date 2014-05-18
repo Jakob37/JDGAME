@@ -39,6 +39,11 @@ namespace JD_spel
 
         private Song happySong;
 
+        private Boolean isMusicRunning;
+
+        private KeyboardState currentKeyboardState;
+        private KeyboardState previousKeyboardState;
+
         //Detta körs när spelet skapas
         public Game1()
         {
@@ -53,6 +58,7 @@ namespace JD_spel
             IsMouseVisible = true;
 
             spriteSheet = new Sprite(this.Content.Load<Texture2D>("FirstSpriteSheet"));
+            
             font = this.Content.Load<SpriteFont>("vanligFont");
 
             graphics.PreferredBackBufferWidth = 900;
@@ -72,6 +78,9 @@ namespace JD_spel
             levelMenyState.Initialize();
 
             runningState = menyState;
+
+            isMusicRunning = true;
+            ControlMusic(isMusicRunning);
         }
 
 
@@ -95,12 +104,37 @@ namespace JD_spel
 
             runningState.Uppdatera(gameTime);
 
-            KeyboardState currentKeyboard = Keyboard.GetState();
-            if (currentKeyboard.IsKeyDown(Keys.M))
+            previousKeyboardState = currentKeyboardState;
+            currentKeyboardState = Keyboard.GetState();
+
+
+            if (currentKeyboardState.IsKeyDown(Keys.M) && previousKeyboardState.IsKeyUp(Keys.M))
+            {
+                isMusicRunning = ToggleBoolean(isMusicRunning);
+
+                ControlMusic(isMusicRunning);
+            }
+        }
+
+        private void ControlMusic(Boolean isMusicRunning)
+        {
+            if (isMusicRunning)
             {
                 MediaPlayer.Play(happySong);
                 MediaPlayer.IsRepeating = true;
             }
+            else
+            {
+                MediaPlayer.Pause();
+            }
+        }
+
+        private Boolean ToggleBoolean(Boolean oldValue)
+        {
+            if (oldValue == false)
+                return true;
+            else
+                return false;
         }
 
         //Detta anropas varje gång spelet uppdaterats. Här finns logik som berättar hur spelet ska ritas upp.
@@ -111,9 +145,9 @@ namespace JD_spel
 
             //Mellan .Begin() och .End() ritas allt i spelet upp för varje frame
             spriteBatch.Begin();
-
+            
             runningState.Rita(spriteBatch);
-
+            
             spriteBatch.End();
         }
 
