@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utils\BackgroundSprite.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\LevelMenyExitKnapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level3Knapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level1Knapp.cs" />

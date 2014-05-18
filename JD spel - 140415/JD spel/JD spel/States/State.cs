@@ -25,7 +25,6 @@ namespace JD_spel
             addObjektLista = new List<SpelObjekt>();
             spelObjektLista = new List<SpelObjekt>();
             leverInteLista = new List<SpelObjekt>();
-
         }
 
         public virtual void Initialize()
