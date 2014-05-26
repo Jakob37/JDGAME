@@ -17,7 +17,7 @@ namespace JD_spel
         {
             bild = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
 
-            bild = spriteSheet.GetSubSprite(new Rectangle(260, 0, 40, 40));
+            bild = spriteSheet.GetSubSprite(new Rectangle(188, 52, 40, 40));
             
             hastighet = 0.1f;
             movement = FiendeMovement.Common; 
