@@ -1,7 +1,7 @@
 ## Ignored files
 
 # Manually added
-JD spel - 140415/JD spel.suo
+JD spel - 140415\JD spel.suo
 JD spel - 140415/JD spel/JD spel/bin/x86/Debug/JD spel.exe
 JD spel - 140415/JD spel/JD spel/bin/x86/Debug/JD spel.pdb
 JD spel - 140415/JD spel/JD spel/obj/x86/Debug/JD spel.exe
@@ -27,6 +27,6 @@ JD spel - 140415/JD spel/JD spel/bin/x86/Debug/JD spel.pdb
 JD spel - 140415/JD spel/JD spel/bin/x86/Debug/JD spel.exe
 
 # Patterns
-[Dd]ebug/
-Debug/
-debug/
+[Dd]ebug\
+Debug\
+debug\
