@@ -62,6 +62,11 @@ namespace JD_spel
                         MakeLevel4();
                         break;
                     }
+                case 5:
+                    {
+                        MakeLevel5();
+                        break;
+                    }
             }
         }
 
@@ -111,33 +116,19 @@ namespace JD_spel
             
         }
 
-        //private void MakeLevel3()
-        //{
-        //    //VanligFiende
-        //
-        //    for (int n = 0; n < 50; n++)
-        //    {
-        //        VanligFiende f1 = new VanligFiende(game, spriteSheet, gubbe, this);
-        //        f1.position = new Vector2(random1.Next(870), random1.Next(670));
-        //        f1.SetRandomDirection(random1);
-        //        spelObjektLista.Add(f1);
-        //    }
-        //}
         private void MakeLevel3()
         {
-            StoneTower torn1 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn1.position = new Vector2(300, 300);
-            spelObjektLista.Add(torn1);
-            StoneTower torn2 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn2.position = new Vector2(700, 300);
-            spelObjektLista.Add(torn2);
-            StoneTower torn3 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn3.position = new Vector2(300, 500);
-            spelObjektLista.Add(torn3);
-            StoneTower torn4 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn4.position = new Vector2(700, 500);
-            spelObjektLista.Add(torn4);
+            //VanligFiende
+        
+            for (int n = 0; n < 50; n++)
+            {
+                VanligFiende f1 = new VanligFiende(game, spriteSheet, gubbe, this);
+                f1.position = new Vector2(random1.Next(870), random1.Next(670));
+                f1.SetRandomDirection(random1);
+                spelObjektLista.Add(f1);
+            }
         }
+        
 
         private void MakeLevel4()
         {
@@ -153,6 +144,22 @@ namespace JD_spel
             FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet, gubbe, this);
             egg.position = new Vector2(300, 300);
             spelObjektLista.Add(egg);
+        }
+
+        private void MakeLevel5()
+        {
+            StoneTower torn1 = new StoneTower(game, spriteSheet, gubbe, this);
+            torn1.position = new Vector2(300, 300);
+            spelObjektLista.Add(torn1);
+            StoneTower torn2 = new StoneTower(game, spriteSheet, gubbe, this);
+            torn2.position = new Vector2(700, 300);
+            spelObjektLista.Add(torn2);
+            StoneTower torn3 = new StoneTower(game, spriteSheet, gubbe, this);
+            torn3.position = new Vector2(300, 500);
+            spelObjektLista.Add(torn3);
+            StoneTower torn4 = new StoneTower(game, spriteSheet, gubbe, this);
+            torn4.position = new Vector2(700, 500);
+            spelObjektLista.Add(torn4);
         }
         #endregion
 
