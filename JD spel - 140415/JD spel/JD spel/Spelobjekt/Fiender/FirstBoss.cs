@@ -47,7 +47,7 @@ namespace JD_spel
             }
             if (antalSkottKvar >=1 && skjutTimer2 >= 75)
             {
-                FiendeSkott s = new FiendeSkott(game, spriteSheet, presentState);
+                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
                 s.SkjutSkott(position, riktning);
                 game.levelState.addObjektLista.Add(s);
                 skjutTimer2 = 0;

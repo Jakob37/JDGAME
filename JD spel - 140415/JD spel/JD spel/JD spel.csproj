@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level5Knapp.cs" />
+    <Compile Include="Spelobjekt\Skott\FiendeSkott.cs" />
     <Compile Include="Utils\BackgroundSprite.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\LevelMenyExitKnapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level3Knapp.cs" />
@@ -133,7 +134,7 @@
     <Compile Include="Spelobjekt\Fiender\FirstBoss.cs" />
     <Compile Include="Spelobjekt\Fiender\Mina.cs" />
     <Compile Include="Spelobjekt\Fiender\MinFiende.cs" />
-    <Compile Include="Spelobjekt\Skott\FiendeSkott.cs" />
+    <Compile Include="Spelobjekt\Skott\VanligtFiendeSkott.cs" />
     <Compile Include="Spelobjekt\Fiender\VanligFiende.cs" />
     <Compile Include="Hämtade klasser\GlobalFunctions.cs" />
     <Compile Include="Spelobjekt\Fiender\FiendeTorn.cs" />

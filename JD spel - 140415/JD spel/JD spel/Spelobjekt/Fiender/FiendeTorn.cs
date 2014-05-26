@@ -33,7 +33,7 @@ namespace JD_spel
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (keyboardState.IsKeyDown(Keys.LeftShift) && lever && skjutTimer >= 500)
             {
-                FiendeSkott s = new FiendeSkott(game, spriteSheet, presentState);
+                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
                 s.SkjutSkott(position, riktning);
                 presentState.addObjektLista.Add(s);
                 skjutTimer = 0;
