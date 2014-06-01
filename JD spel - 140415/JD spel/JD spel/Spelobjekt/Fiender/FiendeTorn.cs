@@ -9,9 +9,9 @@ namespace JD_spel
 {
     class FiendeTorn : Fiende
     {
-
         private KeyboardState keyboardState;
         private int skjutTimer;
+        
         public FiendeTorn(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
@@ -20,14 +20,16 @@ namespace JD_spel
             movement = FiendeMovement.Follow;
             liv = 100;
             skada = 1;
-
+            immobile = true;
         }
+        
         public override void Uppdatera(GameTime gameTime)
         {
             base.Uppdatera(gameTime);
             keyboardState = Keyboard.GetState();
             Skjuta(gameTime);
         }
+        
         private void Skjuta(GameTime gameTime)
         {
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
@@ -39,6 +41,5 @@ namespace JD_spel
                 skjutTimer = 0;
             }
         }
-        
     }
 }

@@ -50,6 +50,7 @@ namespace JD_spel
             loadEnergi = 5;
             valdMagi = SpelarMagi.BasicSkott;
             shield = 30;
+            riktning = new Vector2(1, 0);
             //summon = false;
         }
 
@@ -118,7 +119,7 @@ namespace JD_spel
             {
                 //Vector2 tillFalligRikning = new Vector2(1, 0);
                 BasicSkott s = new BasicSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(position, riktning);
+                s.SkjutSkott(Center, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
@@ -130,7 +131,7 @@ namespace JD_spel
                  && currentEnergi >= energiCost)
             {
                 PowerSkott s = new PowerSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(position, riktning);
+                s.SkjutSkott(Center, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
@@ -141,7 +142,7 @@ namespace JD_spel
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && lever && currentEnergi >= energiCost)
             {
                 BasicLaser s = new BasicLaser(game, spriteSheet, presentState);
-                s.SkjutSkott(position, riktning);
+                s.SkjutSkott(Center, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }

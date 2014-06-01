@@ -18,16 +18,18 @@ namespace JD_spel
 
         public void SkjutSkott(Vector2 skottPosition_, Vector2 riktning_)
         {
-            position = skottPosition_;
+            Center = skottPosition_;
             riktning = riktning_;
             lever = true;
         }
+
         public override void Uppdatera(GameTime gameTime)
         {
             base.Uppdatera(gameTime);
             IsOutside();
             UpdateRange();
         }
+
         private void IsOutside()
         {
             if (position.X < -100 || position.X > game.Window.ClientBounds.Width + 100
@@ -36,6 +38,7 @@ namespace JD_spel
                 lever = false;
             }
         }
+
         private void UpdateRange()
         {
             range -= hastighet;

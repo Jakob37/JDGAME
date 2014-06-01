@@ -13,6 +13,7 @@ namespace JD_spel
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(85, 4, 27, 22));
             movement = FiendeMovement.Static;
+            immobile = true;
 
             liv = 1;
             skada = 10;

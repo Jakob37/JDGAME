@@ -13,11 +13,27 @@ namespace JD_spel
         protected Sprite spriteSheet;
         public Sprite bild;
         public Vector2 position;
+
+        public Boolean immobile = false;
+
+        public Vector2 Center { 
+            get 
+            { 
+                return new Vector2(position.X + bild.Width / 2, position.Y + bild.Height / 2); 
+            }
+            set
+            {
+                position = new Vector2(value.X + bild.Width / 2, value.Y + bild.Height / 2);
+            }
+        }
+
         public Vector2 riktning;
         public Boolean lever;
         public float hastighet;
         public float liv;
         public float skada;
+
+        private const float repellingForce = 1f;
 
         protected Random random;
         protected State presentState;
@@ -39,7 +55,6 @@ namespace JD_spel
         public virtual void Uppdatera(GameTime gameTime)
         {
             position += riktning * hastighet;
-
 
             if (liv <= 0)
             {
@@ -84,6 +99,18 @@ namespace JD_spel
             riktning = new Vector2((float)(random.NextDouble() * 2 - 1),
                 (float)(random.NextDouble() * 2 - 1));
             riktning = GlobalFunctions.ScaleDirection(riktning);
+        }
+
+        public void PushAwayFrom(SpelObjekt other)
+        {
+            Vector2 dirAgainstOther = GetDirection(other);
+            position -= dirAgainstOther * repellingForce;
+        }
+
+        private Vector2 GetDirection(SpelObjekt other)
+        {
+            Vector2 dir = new Vector2(other.position.X - position.X, other.position.Y - position.Y);
+            return GlobalFunctions.ScaleDirection(dir);
         }
     }
 }

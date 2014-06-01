@@ -51,8 +51,6 @@ namespace JD_spel
             return delta;
         }
 
-        //public static double Radians { get; set; }
-
         //Omvandlar ett radianvarde till en Vector2
         public static Vector2 DirFromRadians(double radians)
         {
@@ -101,6 +99,8 @@ namespace JD_spel
             float changedVal = initialVal + 2 * (float)percentVar * initialVal * (float)(rand.NextDouble() - 0.5);
             return changedVal;
         }
+
+        
         /*
         public static GameObjectVertical ReturnClosestObject(GameObjectVertical object1, float range, List<GameObjectVertical> objects)
         {

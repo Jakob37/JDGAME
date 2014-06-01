@@ -29,24 +29,24 @@ namespace JD_spel
             {
                 objekt1.SkadaObjekt(objekt2.skada);
                 objekt2.SkadaObjekt(objekt1.skada);
-                //objekt1.liv -= objekt2.skada;
-                //objekt2.liv -= objekt1.skada;
             }
             else if ((objekt1 is Fiende && objekt2 is SpelarSkott) || (objekt1 is SpelarSkott && objekt2 is Fiende))
             {
                 objekt1.SkadaObjekt(objekt2.skada);
                 objekt2.SkadaObjekt(objekt1.skada);
-                
-                //objekt1.liv -= objekt2.skada;
-                //objekt2.liv -= objekt1.skada;
             }
             else if ((objekt1 is Gubbe && objekt2 is FiendeSkott) || (objekt1 is FiendeSkott && objekt2 is Gubbe))
             {
                 objekt1.SkadaObjekt(objekt2.skada);
                 objekt2.SkadaObjekt(objekt1.skada);
-                
-                //objekt1.liv -= objekt2.skada;
-                //objekt2.liv -= objekt1.skada;
+            }
+            else if (objekt1 is Fiende && objekt2 is Fiende)
+            {
+                if (!objekt1.immobile && !objekt2.immobile)
+                {
+                    objekt1.PushAwayFrom(objekt2);
+                    objekt2.PushAwayFrom(objekt1);
+                }
             }
         }
 

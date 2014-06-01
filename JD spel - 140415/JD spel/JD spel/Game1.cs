@@ -81,6 +81,7 @@ namespace JD_spel
 
             isMusicRunning = true;
             ControlMusic(isMusicRunning);
+
         }
 
 

@@ -136,7 +136,7 @@
     <Compile Include="Kollisionshantering.cs" />
     <Compile Include="Spelobjekt\Fiender\Fiende.cs" />
     <Compile Include="Spelobjekt\Fiender\FirstBoss.cs" />
-    <Compile Include="Spelobjekt\Fiender\Mina.cs" />
+    <Compile Include="Spelobjekt\Skott\Mina.cs" />
     <Compile Include="Spelobjekt\Fiender\MinFiende.cs" />
     <Compile Include="Spelobjekt\Skott\VanligtFiendeSkott.cs" />
     <Compile Include="Spelobjekt\Fiender\VanligFiende.cs" />

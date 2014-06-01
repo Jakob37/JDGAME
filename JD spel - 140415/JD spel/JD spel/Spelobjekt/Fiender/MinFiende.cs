@@ -30,6 +30,7 @@ namespace JD_spel
             base.Uppdatera(gameTime);
             PlaceMine(gameTime);
         }
+        
         private void PlaceMine(GameTime gameTime)
         {
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
