@@ -61,7 +61,7 @@ namespace JD_spel
             if (knappNerTryckt == 5)
                 gubbe.skada = 1;
             if (knappNerTryckt == 6)
-                gubbe.shield = 20;
+                gubbe.shield = 30;
         }
         private void Escape()
         {

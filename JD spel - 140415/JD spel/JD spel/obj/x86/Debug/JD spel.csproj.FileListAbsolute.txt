@@ -252,11 +252,7 @@ C:\Users\user\Dropbox\JD spel - 140415\JD spel\JD spel\obj\x86\Debug\JD spel.csp
 C:\Users\user\Dropbox\JD spel - 140415\JD spel\JD spel\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\user\Dropbox\JD spel - 140415\JD spel\JD spel\obj\x86\Debug\JD spel.exe
 C:\Users\user\Dropbox\JD spel - 140415\JD spel\JD spel\obj\x86\Debug\JD spel.pdb
-C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\gubbe.xnb
-C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\fiende.xnb
-C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\skott.xnb
 C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\FirstSpriteSheet.xnb
-C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\AntEnemy.xnb
 C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\vanligFont.xnb
 C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\menyFont.xnb
 C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\howToPlayFont.xnb

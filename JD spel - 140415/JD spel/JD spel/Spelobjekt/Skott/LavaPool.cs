@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 
-namespace JD_spel.Spelobjekt.Skott
+namespace JD_spel
 {
     class LavaPool : FiendeSkott
     {
+        private int livTimer;
         public LavaPool(Game1 game, Sprite spriteSheet, State presentState)
             : base(game, spriteSheet, presentState)
         {
@@ -20,5 +21,19 @@ namespace JD_spel.Spelobjekt.Skott
             liv = 1000;
             skada = 1;
         }
+        public override void Uppdatera(GameTime gameTime)
+        {
+            base.Uppdatera(gameTime);
+            Death(gameTime);
+        }
+        private void Death(GameTime gameTime)
+        {
+            livTimer += gameTime.ElapsedGameTime.Milliseconds;
+            if (livTimer >= 3000)
+            {
+                liv = 0;
+            }
+        }
+
     }
 }

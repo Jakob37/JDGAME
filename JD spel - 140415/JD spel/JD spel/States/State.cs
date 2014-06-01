@@ -84,6 +84,7 @@ namespace JD_spel
             {
                 if (obj.lever == false)
                 {
+                    obj.OnDeath();
                     leverInteLista.Add(obj);
                 }
             }
