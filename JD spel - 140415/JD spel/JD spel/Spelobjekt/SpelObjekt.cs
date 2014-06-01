@@ -112,5 +112,8 @@ namespace JD_spel
             Vector2 dir = new Vector2(other.position.X - position.X, other.position.Y - position.Y);
             return GlobalFunctions.ScaleDirection(dir);
         }
+
+        public virtual void OnDeath()
+        { }
     }
 }
