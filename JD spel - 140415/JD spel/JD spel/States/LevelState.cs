@@ -72,6 +72,11 @@ namespace JD_spel
                         MakeLevel6();
                         break;
                     }
+                case 00:
+                    {
+                        MakeTestLevel();
+                        break;
+                    }
             }
         }
 
@@ -134,7 +139,6 @@ namespace JD_spel
             }
         }
         
-
         private void MakeLevel4()
         {
             for (int n = 0; n < 10; n++)
@@ -166,9 +170,10 @@ namespace JD_spel
             torn4.position = new Vector2(700, 500);
             spelObjektLista.Add(torn4);
         }
+
         private void MakeLevel6()
         {
-            for (int n = 0; n < 50; n++)
+            for (int n = 0; n < 1; n++)
             {
                 LavaEnemy f1 = new LavaEnemy(game, spriteSheet, gubbe, this);
                 f1.position = new Vector2(random1.Next(870), random1.Next(670));
@@ -176,6 +181,11 @@ namespace JD_spel
                 spelObjektLista.Add(f1);
             }
 
+        }
+
+        private void MakeTestLevel()
+        {
+            
         }
         #endregion
 

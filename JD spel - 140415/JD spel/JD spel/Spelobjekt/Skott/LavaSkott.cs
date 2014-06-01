@@ -21,23 +21,24 @@ namespace JD_spel
             liv = 1;
             skada = 1;
         }
+        public override void OnDeath()
+        {
+            LavaPool s = new LavaPool(game, spriteSheet, presentState);
+            s.SkjutSkott(position, riktning);
+            presentState.addObjektLista.Add(s);
+        }
         public override void Uppdatera(GameTime gameTime)
         {
             base.Uppdatera(gameTime);
             Explode(gameTime);
         }
+
         private void Explode(GameTime gameTime)
         {
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
-            if (skjutTimer >= 4000)
+            if (skjutTimer >= 1500)
             {
                 liv = 0;
-            }
-            if (liv <= 0)
-            {
-                //LavaPool s = new LavaPool(game, spriteSheet, presentState);
-                //s.SkjutSkott(position, riktning);
-                //presentState.addObjektLista.Add(s);
             }
         }
     }

@@ -85,5 +85,10 @@ namespace JD_spel
                 (float)(random.NextDouble() * 2 - 1));
             riktning = GlobalFunctions.ScaleDirection(riktning);
         }
+
+        public virtual void OnDeath()
+        { 
+            
+        }
     }
 }
