@@ -42,11 +42,15 @@ namespace JD_spel
             Level5Knapp level5 = new Level5Knapp(game, spriteSheet, new Vector2(600, 200));
             level5.Initialize();
 
+            Level6Knapp level6 = new Level6Knapp(game, spriteSheet, new Vector2(700, 200));
+            level6.Initialize();
+
             knappar.Add(level1);
             knappar.Add(level2);
             knappar.Add(level3);
             knappar.Add(level4);
             knappar.Add(level5);
+            knappar.Add(level6);
 
             knappar.Add(levelExit);
 

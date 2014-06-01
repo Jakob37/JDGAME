@@ -147,7 +147,7 @@ namespace JD_spel
             }
             if (knappNerTryckt == 7 && gubbe.lever)
             {
-                spriteBatch.DrawString(font, "When you start a level you have 20 shield", new Vector2(200, 100), Color.Red);
+                spriteBatch.DrawString(font, "When you start a level you have 30 shield", new Vector2(200, 100), Color.Red);
                 spriteBatch.DrawString(font, "All damage you take when you have a shield", new Vector2(200, 130), Color.Red);
                 spriteBatch.DrawString(font, "will damage the shield insted", new Vector2(200, 160), Color.Red);
                 spriteBatch.DrawString(font, "Press Enter to continue", new Vector2(200, 190), Color.Red);

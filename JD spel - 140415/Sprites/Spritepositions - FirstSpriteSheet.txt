@@ -15,6 +15,7 @@ Blått skott 	(40,0,5,5)
 Lila skott 	(40,10,5,5)
 Blå laser	(180,0,2,14)
 lava skott	(249,28,5,5)
+lava pöl	(344,3,38,35)
 stenbumling	(324,21,13,13)
 
 Startknapp	(0,50,80,40)

@@ -67,6 +67,11 @@ namespace JD_spel
                         MakeLevel5();
                         break;
                     }
+                case 6:
+                    {
+                        MakeLevel6();
+                        break;
+                    }
             }
         }
 
@@ -160,6 +165,17 @@ namespace JD_spel
             StoneTower torn4 = new StoneTower(game, spriteSheet, gubbe, this);
             torn4.position = new Vector2(700, 500);
             spelObjektLista.Add(torn4);
+        }
+        private void MakeLevel6()
+        {
+            for (int n = 0; n < 50; n++)
+            {
+                LavaEnemy f1 = new LavaEnemy(game, spriteSheet, gubbe, this);
+                f1.position = new Vector2(random1.Next(870), random1.Next(670));
+                f1.SetRandomDirection(random1);
+                spelObjektLista.Add(f1);
+            }
+
         }
         #endregion
 

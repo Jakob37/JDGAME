@@ -12,9 +12,9 @@ namespace JD_spel
         public LavaEnemy(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
-            bild = spriteSheet.GetSubSprite(new Rectangle(275, 7, 39, 39));
-            hastighet = 0;
-            movement = FiendeMovement.Static;
+            bild = spriteSheet.GetSubSprite(new Rectangle(249, 5, 20, 20));
+            hastighet = 1;
+            movement = FiendeMovement.Follow;
             liv = 1000;
             skada = 1;
         }
@@ -28,7 +28,9 @@ namespace JD_spel
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (skjutTimer >= 1500)
             {
-                
+                LavaSkott s = new LavaSkott(game, spriteSheet, presentState);
+                s.SkjutSkott(position, riktning);
+                presentState.addObjektLista.Add(s);
                 skjutTimer = 0;
             }
         }
