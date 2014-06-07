@@ -2,49 +2,13 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>gubbe.png</Source>
-      <Name>gubbe</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\gubbe.xnb</Output>
-      <Time>2014-04-27T09:34:32.7829552+02:00</Time>
-    </Item>
-    <Item>
-      <Source>fiende.png</Source>
-      <Name>fiende</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\fiende.xnb</Output>
-      <Time>2014-04-27T09:34:32.7819552+02:00</Time>
-    </Item>
-    <Item>
-      <Source>skott.png</Source>
-      <Name>skott</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\skott.xnb</Output>
-      <Time>2014-04-27T09:34:32.8179572+02:00</Time>
-    </Item>
-    <Item>
       <Source>FirstSpriteSheet.png</Source>
       <Name>FirstSpriteSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\FirstSpriteSheet.xnb</Output>
-      <Time>2014-06-01T15:04:28.938203+02:00</Time>
-    </Item>
-    <Item>
-      <Source>AntEnemy.png</Source>
-      <Name>AntEnemy</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\AntEnemy.xnb</Output>
-      <Time>2014-04-27T09:34:32.7779549+02:00</Time>
+      <Time>2014-06-01T15:59:39.809574+02:00</Time>
     </Item>
     <Item>
       <Source>Tiles\MudTile.png</Source>
