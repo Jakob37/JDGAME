@@ -9,7 +9,7 @@ namespace JD_spel
 {
     class FiendeMyra : Fiende
     {
-        private Sprite sprite;
+        //private Sprite sprite;
         private Vector2 center;
 
         private double eggLayingChance = 0.0004;
@@ -17,9 +17,9 @@ namespace JD_spel
         public FiendeMyra(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
-            sprite = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
+            //sprite = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
 
-            bild = sprite.GetSubSprite(new Rectangle(0, 0, 30, 45));
+            bild = spriteSheet.GetSubSprite(new Rectangle(183, 0, 30, 46));
 
             hastighet = 6;
             movement = FiendeMovement.Common;

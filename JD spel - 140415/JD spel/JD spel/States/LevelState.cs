@@ -185,10 +185,9 @@ namespace JD_spel
 
         private void MakeTestLevel()
         {
-            LavaEnemy f1 = new LavaEnemy(game, spriteSheet, gubbe, this);
-            f1.position = new Vector2(random1.Next(870), random1.Next(670));
-            f1.SetRandomDirection(random1);
-            spelObjektLista.Add(f1);
+            FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet, gubbe, this);
+            egg.position = new Vector2(300, 300);
+            spelObjektLista.Add(egg);
         }
         #endregion
 

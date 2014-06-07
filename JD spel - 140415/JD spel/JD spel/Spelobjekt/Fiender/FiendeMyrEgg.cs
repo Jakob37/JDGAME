@@ -15,7 +15,7 @@ namespace JD_spel
         public FiendeMyrEgg(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
-            bild = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
+            //bild = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
 
             bild = spriteSheet.GetSubSprite(new Rectangle(188, 52, 40, 40));
             
