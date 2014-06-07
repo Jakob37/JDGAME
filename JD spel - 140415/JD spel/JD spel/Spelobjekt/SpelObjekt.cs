@@ -23,7 +23,7 @@ namespace JD_spel
             }
             set
             {
-                position = new Vector2(value.X + bild.Width / 2, value.Y + bild.Height / 2);
+                position = new Vector2(value.X - bild.Width / 2, value.Y - bild.Height / 2);
             }
         }
 

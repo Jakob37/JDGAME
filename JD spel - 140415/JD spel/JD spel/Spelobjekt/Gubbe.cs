@@ -28,7 +28,6 @@ namespace JD_spel
         public float shield;
         public float GetSpelarShield() { return shield; }
         
-
         //private Boolean summon;
 
         //Konstruktor, som körs när gubben skapas
@@ -87,7 +86,6 @@ namespace JD_spel
             }
         }
 
-
         private void GubbeSkjuter(SpelarMagi magi)
         {
             switch (magi)
@@ -107,7 +105,6 @@ namespace JD_spel
                         BasicLaser();
                         break;
                     }
-                
             }
             
         }
