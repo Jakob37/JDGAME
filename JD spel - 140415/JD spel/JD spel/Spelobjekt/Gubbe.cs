@@ -12,7 +12,8 @@ namespace JD_spel
     {
         BasicSkott,
         PowerSkott,
-        BasicLaser
+        BasicLaser,
+        BigStoneSkott
     }
     class Gubbe : SpelObjekt
     {
@@ -66,6 +67,8 @@ namespace JD_spel
                 valdMagi = SpelarMagi.PowerSkott;
             else if (currentKeyboardState.IsKeyDown(Keys.D3))
                 valdMagi = SpelarMagi.BasicLaser;
+            else if (currentKeyboardState.IsKeyDown(Keys.D4))
+                valdMagi = SpelarMagi.BigStoneSkott;
 
 
             UppdateraGubbensPosition();
@@ -105,6 +108,11 @@ namespace JD_spel
                         BasicLaser();
                         break;
                     }
+                case SpelarMagi.BigStoneSkott:
+                    {
+                        BigStoneSkott();
+                        break;
+                    }
             }
             
         }
@@ -114,7 +122,6 @@ namespace JD_spel
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && previousKeyboardState.IsKeyUp(Keys.LeftShift) && lever
                  && currentEnergi >= energiCost)
             {
-                //Vector2 tillFalligRikning = new Vector2(1, 0);
                 BasicSkott s = new BasicSkott(game, spriteSheet, presentState);
                 s.SkjutSkott(Center, riktning);
                 presentState.addObjektLista.Add(s);
@@ -144,7 +151,18 @@ namespace JD_spel
                 currentEnergi -= energiCost;
             }
         }
-
+        private void BigStoneSkott()
+        {
+            int energiCost = 25;
+            if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && previousKeyboardState.IsKeyUp(Keys.LeftShift) && lever
+                 && currentEnergi >= energiCost)
+            {
+                BigStoneSkott s = new BigStoneSkott(game, spriteSheet, presentState);
+                s.SkjutSkott(Center, riktning);
+                presentState.addObjektLista.Add(s);
+                currentEnergi -= energiCost;
+            }
+        }
         public void UppdateraGubbensPosition()
         {
             

@@ -114,6 +114,7 @@
     <Compile Include="Spelobjekt\Skott\EnemySkott\FiendeSkott.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaPool.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaSkott.cs" />
+    <Compile Include="Spelobjekt\Skott\SpelarSkott\BigStoneSkott.cs" />
     <Compile Include="Utils\BackgroundSprite.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\LevelMenyExitKnapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level3Knapp.cs" />

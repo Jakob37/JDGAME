@@ -185,9 +185,9 @@ namespace JD_spel
 
         private void MakeTestLevel()
         {
-            FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet, gubbe, this);
-            egg.position = new Vector2(300, 300);
-            spelObjektLista.Add(egg);
+            VanligFiende f1 = new VanligFiende(game, spriteSheet, gubbe, this);
+            f1.position = new Vector2(random1.Next(870), random1.Next(670));
+            spelObjektLista.Add(f1);
         }
         #endregion
 

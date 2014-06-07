@@ -115,5 +115,11 @@ namespace JD_spel
 
         public virtual void OnDeath()
         { }
+
+        public virtual Boolean CanDamage(SpelObjekt other)
+        {
+            return true;
+        }
+
     }
 }
