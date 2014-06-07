@@ -15,7 +15,7 @@ namespace JD_spel
             bild = spriteSheet.GetSubSprite(new Rectangle(249, 5, 20, 20));
             hastighet = 1;
             movement = FiendeMovement.Follow;
-            liv = 1000;
+            liv = 30;
             skada = 1;
         }
         public override void Uppdatera(GameTime gameTime)
