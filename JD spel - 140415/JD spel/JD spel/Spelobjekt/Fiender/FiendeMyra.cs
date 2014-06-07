@@ -9,6 +9,18 @@ namespace JD_spel
 {
     class FiendeMyra : Fiende
     {
+        public override Vector2 Position
+        {
+            get
+            {
+                return position;
+            }
+            set
+            {
+                position = value;
+            }
+        }
+        
         private Sprite sprite;
         private Vector2 center;
 
@@ -17,9 +29,9 @@ namespace JD_spel
         public FiendeMyra(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
-            sprite = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
+            //sprite = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
 
-            bild = sprite.GetSubSprite(new Rectangle(0, 0, 30, 45));
+            bild = spriteSheet.GetSubSprite(new Rectangle(183, 0, 30, 46));
 
             hastighet = 6;
             movement = FiendeMovement.Common;
@@ -52,7 +64,7 @@ namespace JD_spel
         private void LayEgg()
         {
             FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet, gubbe, presentState);
-            egg.position = position;
+            egg.Position = Position;
             egg.SetExternalRandom(random);
             egg.SetRandomDirection();
             presentState.addObjektLista.Add(egg);
@@ -63,7 +75,7 @@ namespace JD_spel
             if (lever)
             {
                 float degrees = (float)(GlobalFunctions.RadiansFromDir(riktning) + (Math.PI / 2));
-                spriteBatch.Draw(bild.Texture, position, bild.SourceRectangle, Color.White, degrees, center, 0.5f, SpriteEffects.None, 0.5f);
+                spriteBatch.Draw(bild.Texture, Position, bild.SourceRectangle, Color.White, degrees, center, 0.5f, SpriteEffects.None, 0.5f);
             }
         }
     }

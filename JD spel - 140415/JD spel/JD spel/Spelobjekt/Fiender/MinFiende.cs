@@ -37,7 +37,7 @@ namespace JD_spel
             if (lever && skjutTimer >= 5000)
             {
                 Mina s = new Mina(game, spriteSheet, gubbe, presentState);
-                s.position = position;
+                s.Position = Position;
                 presentState.addObjektLista.Add(s);
                 skjutTimer = 0;
             }

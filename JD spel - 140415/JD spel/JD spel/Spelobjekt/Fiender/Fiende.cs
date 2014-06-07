@@ -60,7 +60,7 @@ namespace JD_spel
 
         private void FollowGubbe()
         {
-            riktning = new Vector2(gubbe.position.X - position.X, gubbe.position.Y - position.Y);
+            riktning = new Vector2(gubbe.Position.X - Position.X, gubbe.Position.Y - Position.Y);
             riktning = GlobalFunctions.ScaleDirection(riktning);
         }
 
@@ -70,21 +70,21 @@ namespace JD_spel
             float WindowWidth = game.Window.ClientBounds.Width;
             float WindowHeight = game.Window.ClientBounds.Height;
 
-            if (position.X < 0)
+            if (Position.X < 0)
             {
                 riktning.X *= -1;
             }
-            if (position.X > WindowWidth - bild.Width)
+            if (Position.X > WindowWidth - bild.Width)
             {
                 riktning.X *= -1;
             }
 
-            if (position.Y < 0)
+            if (Position.Y < 0)
             {
                 riktning.Y *= -1;
             }
 
-            if (position.Y > WindowHeight - bild.Height)
+            if (Position.Y > WindowHeight - bild.Height)
             {
                 riktning.Y *= -1;
             }

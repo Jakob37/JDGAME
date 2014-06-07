@@ -36,7 +36,7 @@ namespace JD_spel
             this.game = game;
 
             hastighet = 5;
-            position = new Vector2(200, 200);
+            Position = new Vector2(200, 200);
             lever = true;
             maxhastighet = 4;
             
@@ -193,23 +193,23 @@ namespace JD_spel
             float WindowWidth = game.Window.ClientBounds.Width;
             float WindowHeight = game.Window.ClientBounds.Height;
 
-            if (position.X < 0)
+            if (PositionX < 0)
             {
-                position.X = 0;
+                PositionX = 0;
             }
-            if (position.X > WindowWidth - bild.Width)
+            if (PositionX > WindowWidth - bild.Width)
             {
-                position.X = WindowWidth - bild.Width;
-            }
-
-            if (position.Y < 0)
-            {
-                position.Y = 0;
+                PositionX = WindowWidth - bild.Width;
             }
 
-            if (position.Y > WindowHeight - bild.Height)
+            if (Position.Y < 0)
             {
-                position.Y = WindowHeight - bild.Height;
+                PositionY = 0;
+            }
+
+            if (PositionY > WindowHeight - bild.Height)
+            {
+                PositionY = WindowHeight - bild.Height;
             }
         }
 

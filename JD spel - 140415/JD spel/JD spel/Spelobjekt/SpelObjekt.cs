@@ -12,18 +12,54 @@ namespace JD_spel
         protected Game1 game;
         protected Sprite spriteSheet;
         public Sprite bild;
-        public Vector2 position;
+        
+        
+        protected Vector2 position;
+        public virtual Vector2 Position { 
+            get 
+            { 
+                return position; 
+            } 
+            set 
+            { 
+                position = value; 
+            } 
+        }
+
+        public float PositionX
+        {
+            get
+            {
+                return position.X;
+            }
+            set
+            {
+                position.Y = value;
+            }
+        }
+
+        public float PositionY
+        {
+            get
+            {
+                return position.Y;
+            }
+            set
+            {
+                position.Y = value;
+            }
+        }
 
         public Boolean immobile = false;
 
         public Vector2 Center { 
             get 
             { 
-                return new Vector2(position.X + bild.Width / 2, position.Y + bild.Height / 2); 
+                return new Vector2(Position.X + bild.Width / 2, Position.Y + bild.Height / 2); 
             }
             set
             {
-                position = new Vector2(value.X - bild.Width / 2, value.Y - bild.Height / 2);
+                Position = new Vector2(value.X - bild.Width / 2, value.Y - bild.Height / 2);
             }
         }
 
@@ -54,7 +90,7 @@ namespace JD_spel
 
         public virtual void Uppdatera(GameTime gameTime)
         {
-            position += riktning * hastighet;
+            Position += riktning * hastighet;
 
             if (liv <= 0)
             {
@@ -67,14 +103,14 @@ namespace JD_spel
         {
             if (lever)
             {
-                spriteBatch.Draw(bild.Texture, position, bild.SourceRectangle, Color.White);
+                spriteBatch.Draw(bild.Texture, Position, bild.SourceRectangle, Color.White);
             }
 
         }
 
         public Rectangle GetKanter()
         {
-            return new Rectangle((int)position.X, (int)position.Y, bild.Width, bild.Height);
+            return new Rectangle((int)Position.X, (int)Position.Y, bild.Width, bild.Height);
         }
 
         public virtual void SkadaObjekt(float skada)
@@ -103,13 +139,18 @@ namespace JD_spel
 
         public void PushAwayFrom(SpelObjekt other)
         {
+            // För att undvika att de hamnar på varandra.
+            // Leder till division med noll annars.
+            if (position == other.Position)
+                PositionX += 1;
+
             Vector2 dirAgainstOther = GetDirection(other);
-            position -= dirAgainstOther * repellingForce;
+            Position -= dirAgainstOther * repellingForce;
         }
 
         private Vector2 GetDirection(SpelObjekt other)
         {
-            Vector2 dir = new Vector2(other.position.X - position.X, other.position.Y - position.Y);
+            Vector2 dir = new Vector2(other.Position.X - Position.X, other.Position.Y - Position.Y);
             return GlobalFunctions.ScaleDirection(dir);
         }
 

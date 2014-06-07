@@ -20,7 +20,7 @@ namespace JD_spel
             this.spriteSheet = spriteSheet;
 
             bild = spriteSheet.GetSubSprite(new Rectangle(40, 10, 5, 5));
-            position = new Vector2(-100, -100);
+            Position = new Vector2(-100, -100);
             hastighet = 3;
             liv = 1;
             skada = 30;

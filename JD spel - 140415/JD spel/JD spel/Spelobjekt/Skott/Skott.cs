@@ -32,8 +32,8 @@ namespace JD_spel
 
         private void IsOutside()
         {
-            if (position.X < -100 || position.X > game.Window.ClientBounds.Width + 100
-                || position.Y < -100 || position.Y > game.Window.ClientBounds.Height + 100)
+            if (Position.X < -100 || Position.X > game.Window.ClientBounds.Width + 100
+                || Position.Y < -100 || Position.Y > game.Window.ClientBounds.Height + 100)
             {
                 lever = false;
             }

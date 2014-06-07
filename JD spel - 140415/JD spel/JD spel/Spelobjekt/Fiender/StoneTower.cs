@@ -33,19 +33,19 @@ namespace JD_spel
             if (skjutTimer >= 1000)
             {
                 BigEnemyStone s1 = new BigEnemyStone(game, spriteSheet, presentState);
-                s1.SkjutSkott(position, riktningUp);
+                s1.SkjutSkott(Position, riktningUp);
                 presentState.addObjektLista.Add(s1);
 
                 BigEnemyStone s2 = new BigEnemyStone(game, spriteSheet, presentState);
-                s2.SkjutSkott(position, riktningDown);
+                s2.SkjutSkott(Position, riktningDown);
                 presentState.addObjektLista.Add(s2);
 
                 BigEnemyStone s3 = new BigEnemyStone(game, spriteSheet, presentState);
-                s3.SkjutSkott(position, riktningLeft);
+                s3.SkjutSkott(Position, riktningLeft);
                 presentState.addObjektLista.Add(s3);
 
                 BigEnemyStone s4 = new BigEnemyStone(game, spriteSheet, presentState);
-                s4.SkjutSkott(position, riktningRight);
+                s4.SkjutSkott(Position, riktningRight);
                 presentState.addObjektLista.Add(s4);
 
                 skjutTimer = 0;

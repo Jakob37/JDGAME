@@ -48,7 +48,7 @@ namespace JD_spel
             if (antalSkottKvar >=1 && skjutTimer2 >= 75)
             {
                 VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(position, riktning);
+                s.SkjutSkott(Position, riktning);
                 game.levelState.addObjektLista.Add(s);
                 skjutTimer2 = 0;
                 antalSkottKvar -= 1;
@@ -61,7 +61,7 @@ namespace JD_spel
             if (lever && minTimer >= 2000)
             {
                 Mina s = new Mina(game, spriteSheet, gubbe, presentState);
-                s.position = position;
+                s.Position = Position;
                 game.levelState.addObjektLista.Add(s);
                 minTimer = 0;
             }

@@ -15,8 +15,6 @@ namespace JD_spel
         public FiendeMyrEgg(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
-            bild = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
-
             bild = spriteSheet.GetSubSprite(new Rectangle(188, 52, 40, 40));
             
             hastighet = 0.1f;
@@ -52,7 +50,7 @@ namespace JD_spel
             for (int n = 0; n < numberOfAnts; n++)
             {
                 FiendeMyra myra = new FiendeMyra(game, spriteSheet, gubbe, presentState);
-                myra.position = position;
+                myra.Position = Position;
                 myra.SetExternalRandom(random);
                 myra.SetRandomDirection();
                 presentState.addObjektLista.Add(myra);
@@ -63,7 +61,7 @@ namespace JD_spel
         {
             if (lever)
             {
-                spriteBatch.Draw(bild.Texture, position, bild.SourceRectangle, Color.White);
+                spriteBatch.Draw(bild.Texture, Position, bild.SourceRectangle, Color.White);
             } 
         }
 

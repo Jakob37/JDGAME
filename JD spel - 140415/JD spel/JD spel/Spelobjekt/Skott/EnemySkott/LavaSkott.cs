@@ -16,7 +16,7 @@ namespace JD_spel
             this.spriteSheet = spriteSheet;
 
             bild = spriteSheet.GetSubSprite(new Rectangle(249, 28, 5, 5));
-            position = new Vector2(-100, -100);
+            Position = new Vector2(-100, -100);
             hastighet = 4;
             liv = 1;
             skada = 1;
@@ -24,7 +24,7 @@ namespace JD_spel
         public override void OnDeath()
         {
             LavaPool s = new LavaPool(game, spriteSheet, presentState);
-            s.SkjutSkott(position, riktning);
+            s.SkjutSkott(Position, riktning);
             presentState.addObjektLista.Add(s);
         }
         public override void Uppdatera(GameTime gameTime)

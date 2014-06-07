@@ -36,7 +36,7 @@ namespace JD_spel
             if (keyboardState.IsKeyDown(Keys.LeftShift) && lever && skjutTimer >= 500)
             {
                 VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(position, riktning);
+                s.SkjutSkott(Position, riktning);
                 presentState.addObjektLista.Add(s);
                 skjutTimer = 0;
             }
