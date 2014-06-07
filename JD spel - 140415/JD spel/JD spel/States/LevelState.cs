@@ -173,7 +173,7 @@ namespace JD_spel
 
         private void MakeLevel6()
         {
-            for (int n = 0; n < 1; n++)
+            for (int n = 0; n < 20; n++)
             {
                 LavaEnemy f1 = new LavaEnemy(game, spriteSheet, gubbe, this);
                 f1.position = new Vector2(random1.Next(870), random1.Next(670));
@@ -185,7 +185,10 @@ namespace JD_spel
 
         private void MakeTestLevel()
         {
-            
+            LavaEnemy f1 = new LavaEnemy(game, spriteSheet, gubbe, this);
+            f1.position = new Vector2(random1.Next(870), random1.Next(670));
+            f1.SetRandomDirection(random1);
+            spelObjektLista.Add(f1);
         }
         #endregion
 
