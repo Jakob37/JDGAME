@@ -6,16 +6,19 @@ using Microsoft.Xna.Framework;
 
 namespace JD_spel
 {
-    class StoneTower : Fiende
+    class StoneTowerBoss : Fiende
     {
-        private int skjutTimer;
-        public StoneTower(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
-            : base (game, spriteSheet, gubbe, presentState)
+        private int stoneTimer;
+        private int skjutTimer2;
+        private int skjutTimer3;
+        private int antalSkottKvar;
+        public StoneTowerBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+            : base(game, spriteSheet, gubbe, presentState)
         {
-            bild = spriteSheet.GetSubSprite(new Rectangle(275, 7, 39, 39));
+            bild = spriteSheet.GetSubSprite(new Rectangle(394,4,70,70));
             hastighet = 0;
-            movement = FiendeMovement.Static;
-            liv = 1000;
+            movement = FiendeMovement.Follow;
+            liv = 10000;
             skada = 1;
             immobile = true;
         }
@@ -26,12 +29,12 @@ namespace JD_spel
         }
         private void Skjuta(GameTime gameTime)
         {
-            skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
+            stoneTimer += gameTime.ElapsedGameTime.Milliseconds;
             Vector2 riktningUp = new Vector2(0, -1);
             Vector2 riktningDown = new Vector2(0, 1);
             Vector2 riktningLeft = new Vector2(-1, 0);
             Vector2 riktningRight = new Vector2(1, 0);
-            if (skjutTimer >= 1000)
+            if (stoneTimer >= 1500)
             {
                 BigEnemyStone s1 = new BigEnemyStone(game, spriteSheet, presentState);
                 s1.SkjutSkott(Position, riktningUp);
@@ -49,7 +52,22 @@ namespace JD_spel
                 s4.SkjutSkott(Position, riktningRight);
                 presentState.addObjektLista.Add(s4);
 
-                skjutTimer = 0;
+                stoneTimer = 0;
+            }
+            skjutTimer2 += gameTime.ElapsedGameTime.Milliseconds;
+            skjutTimer3 += gameTime.ElapsedGameTime.Milliseconds;
+            if (lever && skjutTimer2 >= 3000 && antalSkottKvar <= 0)
+            {
+                antalSkottKvar = 5;
+                skjutTimer2 = 0;
+            }
+            if (antalSkottKvar >= 1 && skjutTimer3 >= 200)
+            {
+                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
+                s.SkjutSkott(Position, riktning);
+                game.levelState.addObjektLista.Add(s);
+                skjutTimer3 = 0;
+                antalSkottKvar -= 1;
             }
         }
     }
