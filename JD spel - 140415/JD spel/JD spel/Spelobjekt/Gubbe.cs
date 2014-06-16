@@ -51,6 +51,7 @@ namespace JD_spel
             valdMagi = SpelarMagi.BasicSkott;
             shield = 30;
             riktning = new Vector2(1, 0);
+            drawLayer = 0.5f;
             //summon = false;
         }
 
@@ -123,7 +124,7 @@ namespace JD_spel
                  && currentEnergi >= energiCost)
             {
                 BasicSkott s = new BasicSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(Center, riktning);
+                s.SkjutSkott(this, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
@@ -135,7 +136,7 @@ namespace JD_spel
                  && currentEnergi >= energiCost)
             {
                 PowerSkott s = new PowerSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(Center, riktning);
+                s.SkjutSkott(this, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
@@ -146,7 +147,7 @@ namespace JD_spel
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && lever && currentEnergi >= energiCost)
             {
                 BasicLaser s = new BasicLaser(game, spriteSheet, presentState);
-                s.SkjutSkott(Center, riktning);
+                s.SkjutSkott(this, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
@@ -158,7 +159,7 @@ namespace JD_spel
                  && currentEnergi >= energiCost)
             {
                 BigStoneSkott s = new BigStoneSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(Center, riktning);
+                s.SkjutSkott(this, riktning);
                 presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
@@ -219,12 +220,12 @@ namespace JD_spel
             {
                 PositionX = WindowWidth - bild.Width;
             }
-
+            
             if (Position.Y < 0)
             {
                 PositionY = 0;
             }
-
+            
             if (PositionY > WindowHeight - bild.Height)
             {
                 PositionY = WindowHeight - bild.Height;

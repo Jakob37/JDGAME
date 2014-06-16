@@ -213,10 +213,10 @@ namespace JD_spel
             base.Rita(spriteBatch);
 
             //Skriv saker
-            spriteBatch.DrawString(font, "Liv: " + gubbe.liv.ToString(), new Vector2(50, 50), Color.Red);
-            spriteBatch.DrawString(font, "Energi: " + gubbe.currentEnergi.ToString(), new Vector2(50, 70), Color.Blue);
-            spriteBatch.DrawString(font, "Shield: " + gubbe.GetSpelarShield().ToString(), new Vector2(50, 90), Color.LightGreen);
-            spriteBatch.DrawString(font, "Vapen: " + gubbe.GetSpelarMagi().ToString(), new Vector2(50, 110), Color.Yellow);
+            spriteBatch.DrawString(font, "Liv: " + gubbe.liv.ToString(), new Vector2(30, 30), Color.Red, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(font, "Energi: " + gubbe.currentEnergi.ToString(), new Vector2(30, 50), Color.Blue, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(font, "Shield: " + gubbe.GetSpelarShield().ToString(), new Vector2(30, 70), Color.LightGreen, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(font, "Vapen: " + gubbe.GetSpelarMagi().ToString(), new Vector2(30, 90), Color.Yellow, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
         }
 
         

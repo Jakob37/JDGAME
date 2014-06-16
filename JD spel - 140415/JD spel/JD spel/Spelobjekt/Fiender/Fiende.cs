@@ -23,7 +23,7 @@ namespace JD_spel
         { 
             this.gubbe = gubbe;
             lever = true;
-            
+            drawLayer = 0.5f;
         }
 
         public override void Uppdatera(GameTime gameTime)

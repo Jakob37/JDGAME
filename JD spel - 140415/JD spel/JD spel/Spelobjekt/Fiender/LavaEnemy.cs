@@ -29,7 +29,7 @@ namespace JD_spel
             if (skjutTimer >= 1500)
             {
                 LavaSkott s = new LavaSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(Position, riktning);
+                s.SkjutSkott(this, riktning);
                 presentState.addObjektLista.Add(s);
                 skjutTimer = 0;
             }

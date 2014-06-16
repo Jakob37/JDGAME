@@ -24,7 +24,7 @@ namespace JD_spel
         public override void OnDeath()
         {
             LavaPool s = new LavaPool(game, spriteSheet, presentState);
-            s.SkjutSkott(Position, riktning);
+            s.SkjutSkott(this, riktning);
             presentState.addObjektLista.Add(s);
         }
         public override void Uppdatera(GameTime gameTime)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace JD_spel
 {
@@ -14,11 +15,12 @@ namespace JD_spel
             : base(game, spriteSheet, presentState)
         {
             lever = true;
+            drawLayer = 0.8f;
         }
 
-        public void SkjutSkott(Vector2 skottPosition_, Vector2 riktning_)
+        public void SkjutSkott(SpelObjekt shooter, Vector2 riktning_)
         {
-            Center = skottPosition_;
+            Position = shooter.Position;
             riktning = riktning_;
             lever = true;
         }
@@ -45,5 +47,11 @@ namespace JD_spel
             if (range <= 0)
                 lever = false;
         }
+
+        public override void Rita(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(bild.Texture, Position, bild.SourceRectangle, Color.White * transparency, (float)(Radians), CenterOffset, 1.0f, SpriteEffects.None, drawLayer);
+        }
+
     }
 }
