@@ -145,8 +145,8 @@ namespace JD_spel
             base.Draw(gameTime);
 
             //Mellan .Begin() och .End() ritas allt i spelet upp för varje frame
-            spriteBatch.Begin();
-            
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+
             runningState.Rita(spriteBatch);
             
             spriteBatch.End();

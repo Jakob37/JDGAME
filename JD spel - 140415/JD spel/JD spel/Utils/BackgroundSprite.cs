@@ -27,7 +27,8 @@ namespace JD_spel
 
             foreach (Vector2 coordinate in coordinates)
             {
-                spriteBatch.Draw(tile.Texture, coordinate, tile.SourceRectangle, Color.White);
+                spriteBatch.Draw(tile.Texture, coordinate, tile.SourceRectangle, Color.White, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                //spriteBatch.Draw(tile.Texture, coordinate, tile.SourceRectangle, Color.White);
             }
         }
 

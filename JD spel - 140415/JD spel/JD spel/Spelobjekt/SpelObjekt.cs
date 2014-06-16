@@ -9,11 +9,14 @@ namespace JD_spel
 {
     public class SpelObjekt
     {
+        #region variabler
         protected Game1 game;
         protected Sprite spriteSheet;
         public Sprite bild;
-        
-        
+
+        protected float transparency;
+        protected float drawLayer;
+
         protected Vector2 position;
         public virtual Vector2 Position { 
             get 
@@ -25,8 +28,7 @@ namespace JD_spel
                 position = value; 
             } 
         }
-
-        public float PositionX
+        public virtual float PositionX
         {
             get
             {
@@ -34,11 +36,10 @@ namespace JD_spel
             }
             set
             {
-                position.Y = value;
+                position.X = value;
             }
         }
-
-        public float PositionY
+        public virtual float PositionY
         {
             get
             {
@@ -63,7 +64,32 @@ namespace JD_spel
             }
         }
 
-        public Vector2 riktning;
+        public Vector2 CenterOffset
+        {
+            get
+            {
+                return new Vector2(bild.Width / 2, bild.Height / 2);
+            }
+        }
+
+        protected Vector2 riktning;
+        public Vector2 Riktning
+        {
+            get 
+            {
+                return riktning;
+            }
+        }
+
+        private double radians;
+        public double Radians
+        {
+            get
+            {
+                return radians;
+            }
+        }
+
         public Boolean lever;
         public float hastighet;
         public float liv;
@@ -73,12 +99,14 @@ namespace JD_spel
 
         protected Random random;
         protected State presentState;
-
+        #endregion
 
         public SpelObjekt(Game1 game, Sprite spriteSheet, State presentState)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
+
+            transparency = 1f;
 
             skada = 0;
             lever = true;
@@ -97,20 +125,32 @@ namespace JD_spel
                 liv = 0;
                 lever = false;
             }
+
+            SetRadians();
+        }
+
+        private void SetRadians()
+        {
+            if (Riktning.Y > 0)
+                radians = Math.Acos(Riktning.X);
+            else
+                radians = 2 * Math.PI - (Math.Acos(Riktning.X));
+
+            if (Radians >= 2 * Math.PI)
+                radians -= 2 * Math.PI;
         }
 
         public virtual void Rita(SpriteBatch spriteBatch)
         {
             if (lever)
             {
-                spriteBatch.Draw(bild.Texture, Position, bild.SourceRectangle, Color.White);
+                spriteBatch.Draw(bild.Texture, position, bild.SourceRectangle, Color.White * transparency, 0.0f, CenterOffset, 1f, SpriteEffects.None, 0.5f);
             }
-
         }
 
         public Rectangle GetKanter()
         {
-            return new Rectangle((int)Position.X, (int)Position.Y, bild.Width, bild.Height);
+            return new Rectangle((int)Position.X - bild.Width / 2, (int)Position.Y - bild.Height / 2, bild.Width, bild.Height);
         }
 
         public virtual void SkadaObjekt(float skada)
