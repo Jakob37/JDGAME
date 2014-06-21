@@ -111,6 +111,7 @@
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level5Knapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\TestLevelKnapp.cs" />
     <Compile Include="Spelobjekt\Fiender\LavaEnemy.cs" />
+    <Compile Include="Spelobjekt\Fiender\StoneTowerBoss.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\FiendeSkott.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaPool.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaSkott.cs" />

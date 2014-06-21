@@ -181,6 +181,19 @@ namespace JD_spel
             }
             if (knappNerTryckt == 11 && gubbe.lever)
             {
+                spriteBatch.DrawString(font, "4. Big Stone Skott", new Vector2(220, 130), Color.Red);
+                spriteBatch.DrawString(font, "Very high cost, Very high damage, full range", new Vector2(220, 160), Color.Red);
+                spriteBatch.DrawString(font, "Good to kill grouped enemies", new Vector2(220, 190), Color.Red);
+                //spriteBatch.DrawString(font, "2. Power Skott", new Vector2(220, 250), Color.Red);
+                //spriteBatch.DrawString(font, "High cost, High damage, medium range", new Vector2(220, 280), Color.Red);
+                //spriteBatch.DrawString(font, "Good to kill High health Enemies", new Vector2(220, 310), Color.Red);
+                //spriteBatch.DrawString(font, "3. Basic Laser", new Vector2(220, 370), Color.Red);
+                //spriteBatch.DrawString(font, "High cost, High damage, medium range", new Vector2(220, 400), Color.Red);
+                //spriteBatch.DrawString(font, "Good to kill many Enemies at once", new Vector2(220, 430), Color.Red);
+                spriteBatch.DrawString(font, "Press Enter to continue", new Vector2(220, 460), Color.Red);
+            }
+            if (knappNerTryckt == 12 && gubbe.lever)
+            {
                 spriteBatch.DrawString(font, "Now is the tutorial done!!", new Vector2(220, 100), Color.Red);
                 spriteBatch.DrawString(font, "You can always press Escape to go Back a Stage", new Vector2(220, 130), Color.Red);
             }

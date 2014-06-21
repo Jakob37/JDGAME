@@ -21,20 +21,17 @@ namespace JD_spel
             hastighet = 2;
             liv = 10000;
             skada = 200;
-            energiKostnad = 25;
+            energiKostnad = 50;
             oneTimeDamageLista = new List<SpelObjekt>();
         }
 
         public override void Uppdatera(GameTime gameTime)
         {
             base.Uppdatera(gameTime);
-            OneTimeDamage();
+            
             
         }
-        private void OneTimeDamage()
-        {
-
-        }
+        
         public override bool CanDamage(SpelObjekt other)
         {
             if (!oneTimeDamageLista.Contains(other))

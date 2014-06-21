@@ -19,7 +19,7 @@ namespace JD_spel
             Position = new Vector2(-100, -100);
             hastighet = 5;
             liv = 1;
-            skada = 50F;
+            skada = 25F;
             energiKostnad = 1;
             range = 300;
         }

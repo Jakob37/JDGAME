@@ -17,6 +17,7 @@ namespace JD_spel
             movement = FiendeMovement.Static;
             liv = 1000;
             skada = 1;
+            immobile = true;
         }
         public override void Uppdatera(GameTime gameTime)
         {
