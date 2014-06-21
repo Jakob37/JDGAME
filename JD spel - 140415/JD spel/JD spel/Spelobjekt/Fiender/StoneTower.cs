@@ -9,8 +9,8 @@ namespace JD_spel
     class StoneTower : Fiende
     {
         private int skjutTimer;
-        public StoneTower(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base (game, spriteSheet, gubbe, presentState)
+        public StoneTower(Game1 game, Sprite spriteSheet)
+            : base (game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(275, 7, 39, 39));
             hastighet = 0;
@@ -33,21 +33,21 @@ namespace JD_spel
             Vector2 riktningRight = new Vector2(1, 0);
             if (skjutTimer >= 1000)
             {
-                BigEnemyStone s1 = new BigEnemyStone(game, spriteSheet, presentState);
+                BigEnemyStone s1 = new BigEnemyStone(game, spriteSheet);
                 s1.SkjutSkott(this, riktningUp);
-                presentState.addObjektLista.Add(s1);
+                runningState.addObjektLista.Add(s1);
 
-                BigEnemyStone s2 = new BigEnemyStone(game, spriteSheet, presentState);
+                BigEnemyStone s2 = new BigEnemyStone(game, spriteSheet);
                 s2.SkjutSkott(this, riktningDown);
-                presentState.addObjektLista.Add(s2);
+                runningState.addObjektLista.Add(s2);
 
-                BigEnemyStone s3 = new BigEnemyStone(game, spriteSheet, presentState);
+                BigEnemyStone s3 = new BigEnemyStone(game, spriteSheet);
                 s3.SkjutSkott(this, riktningLeft);
-                presentState.addObjektLista.Add(s3);
+                runningState.addObjektLista.Add(s3);
 
-                BigEnemyStone s4 = new BigEnemyStone(game, spriteSheet, presentState);
+                BigEnemyStone s4 = new BigEnemyStone(game, spriteSheet);
                 s4.SkjutSkott(this, riktningRight);
-                presentState.addObjektLista.Add(s4);
+                runningState.addObjektLista.Add(s4);
 
                 skjutTimer = 0;
             }

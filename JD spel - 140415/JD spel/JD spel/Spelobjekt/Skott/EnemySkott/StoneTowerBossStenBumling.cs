@@ -9,7 +9,7 @@ namespace JD_spel
     class StoneTowerBossStenBumling : FiendeSkott
     {
         public StoneTowerBossStenBumling(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+            : base(game, spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;

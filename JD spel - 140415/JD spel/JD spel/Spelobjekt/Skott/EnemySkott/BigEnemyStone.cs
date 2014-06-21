@@ -8,8 +8,8 @@ namespace JD_spel
 {
     class BigEnemyStone : FiendeSkott
     {
-        public BigEnemyStone(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public BigEnemyStone(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;

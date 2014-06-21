@@ -9,7 +9,7 @@ namespace JD_spel
     class VanligtFiendeSkott : FiendeSkott
     {
         public VanligtFiendeSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+            : base(game, spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;

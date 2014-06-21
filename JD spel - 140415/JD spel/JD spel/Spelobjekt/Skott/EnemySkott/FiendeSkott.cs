@@ -8,10 +8,8 @@ namespace JD_spel
 {
     class FiendeSkott : Skott
     {
-
-
-        public FiendeSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public FiendeSkott(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             lever = true;
         }

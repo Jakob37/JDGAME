@@ -27,6 +27,7 @@ namespace JD_spel
             base.Initialize();
 
             spelObjektLista.Clear();
+            game.Player1.Initialize(this);
         }
 
         public override void Uppdatera(GameTime gameTime)

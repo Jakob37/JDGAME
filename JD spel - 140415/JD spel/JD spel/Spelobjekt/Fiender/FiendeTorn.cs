@@ -12,8 +12,8 @@ namespace JD_spel
         private KeyboardState keyboardState;
         private int skjutTimer;
 
-        public FiendeTorn(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public FiendeTorn(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(50, 0, 29, 29));
             hastighet = 0;
@@ -22,7 +22,7 @@ namespace JD_spel
             skada = 1;
             immobile = true;
         }
-        
+
         public override void Uppdatera(GameTime gameTime)
         {
             base.Uppdatera(gameTime);
@@ -35,9 +35,9 @@ namespace JD_spel
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (keyboardState.IsKeyDown(Keys.LeftShift) && lever && skjutTimer >= 500)
             {
-                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
+                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, runningState);
                 s.SkjutSkott(this, riktning);
-                presentState.addObjektLista.Add(s);
+                runningState.addObjektLista.Add(s);
                 skjutTimer = 0;
             }
         }

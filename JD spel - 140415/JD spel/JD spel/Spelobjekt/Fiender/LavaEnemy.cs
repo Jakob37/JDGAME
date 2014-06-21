@@ -9,8 +9,8 @@ namespace JD_spel
     class LavaEnemy : Fiende
     {
         private int skjutTimer;
-        public LavaEnemy(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public LavaEnemy(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(249, 5, 20, 20));
             hastighet = 1;
@@ -28,9 +28,10 @@ namespace JD_spel
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (skjutTimer >= 1500)
             {
-                LavaSkott s = new LavaSkott(game, spriteSheet, presentState);
+                LavaSkott s = new LavaSkott(game, spriteSheet);
+                s.Initialize(runningState);
                 s.SkjutSkott(this, riktning);
-                presentState.addObjektLista.Add(s);
+                runningState.addObjektLista.Add(s);
                 skjutTimer = 0;
             }
         }

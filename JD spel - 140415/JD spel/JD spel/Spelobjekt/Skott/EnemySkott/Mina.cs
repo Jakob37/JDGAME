@@ -8,8 +8,8 @@ namespace JD_spel
 {
     class Mina : Fiende
     {
-        public Mina(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public Mina(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(85, 4, 27, 22));
             movement = FiendeMovement.Static;

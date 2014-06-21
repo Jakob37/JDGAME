@@ -6,12 +6,10 @@ using Microsoft.Xna.Framework;
 
 namespace JD_spel
 {
-    class TestLevelKnapp : Clickable
+    class TestLevelKnapp : LevelKnapp
     {
-        Game1 game;
-
-        public TestLevelKnapp(Game1 game, Sprite spriteSheet, Vector2 position)
-            : base(spriteSheet, position)
+        public TestLevelKnapp(Game1 game, Sprite spriteSheet, Vector2 position, Level level)
+            : base(game, spriteSheet, position, level)
         {
             displaySprite = spriteSheet.GetSubSprite(new Rectangle(80, 200, 50, 30));
             this.game = game;
@@ -29,8 +27,13 @@ namespace JD_spel
 
         private void ClickLogic()
         {
+            IncreaseStartCount();
+
             game.levelState.Initialize();
-            game.levelState.SetLevel(00);
+            //game.levelState.SetLevel(1);
+            level.Initialize(game.levelState);
+            game.levelState.MakeLevel(Level);
+
             game.runningState = game.levelState;
         }
     }

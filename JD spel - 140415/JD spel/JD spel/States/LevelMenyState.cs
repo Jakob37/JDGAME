@@ -23,38 +23,53 @@ namespace JD_spel
 
             knappar = new List<Clickable>();
 
+            Random random = new Random();
 
             LevelMenyExitKnapp levelExit = new LevelMenyExitKnapp(game, spriteSheet, new Vector2(410, 550));
             levelExit.Initialize();
 
-            Level1Knapp level1 = new Level1Knapp(game, spriteSheet, new Vector2(200, 200));
-            level1.Initialize();
+            Level1 lv1 = new Level1(game, spriteSheet, random);
+            Level1Knapp level1knapp = new Level1Knapp(game, spriteSheet, new Vector2(200, 200), lv1);
+            level1knapp.Initialize();
+            lv1.AddLevelButton(level1knapp);
 
-            Level2Knapp level2 = new Level2Knapp(game, spriteSheet, new Vector2(300, 200));
-            level2.Initialize();
+            Level2 lv2 = new Level2(game, spriteSheet, random);
+            Level2Knapp level2knapp = new Level2Knapp(game, spriteSheet, new Vector2(300, 200), lv2);
+            level2knapp.Initialize();
+            lv2.AddLevelButton(level2knapp);
 
-            Level3Knapp level3 = new Level3Knapp(game, spriteSheet, new Vector2(400, 200));
-            level3.Initialize();
+            Level3 lv3 = new Level3(game, spriteSheet, random);
+            Level3Knapp level3knapp = new Level3Knapp(game, spriteSheet, new Vector2(400, 200), lv3);
+            level3knapp.Initialize();
+            lv3.AddLevelButton(level3knapp);
 
-            Level4Knapp level4 = new Level4Knapp(game, spriteSheet, new Vector2(500, 200));
-            level4.Initialize();
+            Level4 lv4 = new Level4(game, spriteSheet, random);
+            Level4Knapp level4knapp = new Level4Knapp(game, spriteSheet, new Vector2(500, 200), lv4);
+            level4knapp.Initialize();
+            lv4.AddLevelButton(level4knapp);
 
-            Level5Knapp level5 = new Level5Knapp(game, spriteSheet, new Vector2(600, 200));
-            level5.Initialize();
+            Level5 lv5 = new Level5(game, spriteSheet, random);
+            Level5Knapp level5knapp = new Level5Knapp(game, spriteSheet, new Vector2(600, 200), lv5);
+            level5knapp.Initialize();
+            lv5.AddLevelButton(level5knapp);
 
-            Level6Knapp level6 = new Level6Knapp(game, spriteSheet, new Vector2(700, 200));
-            level6.Initialize();
+            Level6 lv6 = new Level6(game, spriteSheet, random);
+            Level6Knapp level6knapp = new Level6Knapp(game, spriteSheet, new Vector2(700, 200), lv6);
+            level6knapp.Initialize();
+            lv6.AddLevelButton(level6knapp);
 
-            TestLevelKnapp level00 = new TestLevelKnapp(game, spriteSheet, new Vector2(800, 600));
-            level00.Initialize();
+            LevelTest lvTest = new LevelTest(game, spriteSheet, random);
+            TestLevelKnapp levelTestknapp = new TestLevelKnapp(game, spriteSheet, new Vector2(800, 600), lvTest);
+            levelTestknapp.Initialize();
+            lvTest.AddLevelButton(levelTestknapp);
 
-            knappar.Add(level1);
-            knappar.Add(level2);
-            knappar.Add(level3);
-            knappar.Add(level4);
-            knappar.Add(level5);
-            knappar.Add(level6);
-            knappar.Add(level00);
+            knappar.Add(level1knapp);
+            knappar.Add(level2knapp);
+            knappar.Add(level3knapp);
+            knappar.Add(level4knapp);
+            knappar.Add(level5knapp);
+            knappar.Add(level6knapp);
+            knappar.Add(levelTestknapp);
 
             knappar.Add(levelExit);
 
