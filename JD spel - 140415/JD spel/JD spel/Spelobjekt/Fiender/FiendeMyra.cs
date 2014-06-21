@@ -26,11 +26,9 @@ namespace JD_spel
 
         private double eggLayingChance = 0.0004;
 
-        public FiendeMyra(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public FiendeMyra(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
-            //sprite = new Sprite(game.Content.Load<Texture2D>("AntEnemy"));
-
             bild = spriteSheet.GetSubSprite(new Rectangle(183, 0, 30, 46));
 
             hastighet = 6;

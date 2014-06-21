@@ -105,11 +105,19 @@ namespace JD_spel
 
             runningState.Uppdatera(gameTime);
 
-            previousKeyboardState = currentKeyboardState;
-            currentKeyboardState = Keyboard.GetState();
+            //previousKeyboardState = currentKeyboardState;
+            //currentKeyboardState = Keyboard.GetState();
 
+            ControlManager.Uppdatera(gameTime);
 
-            if (currentKeyboardState.IsKeyDown(Keys.M) && previousKeyboardState.IsKeyUp(Keys.M))
+            //if (currentKeyboardState.IsKeyDown(Keys.M) && previousKeyboardState.IsKeyUp(Keys.M))
+            //{
+            //    isMusicRunning = ToggleBoolean(isMusicRunning);
+            //
+            //    ControlMusic(isMusicRunning);
+            //}
+
+            if (ControlManager.IsKeyPressed(Keys.M))
             {
                 isMusicRunning = ToggleBoolean(isMusicRunning);
 

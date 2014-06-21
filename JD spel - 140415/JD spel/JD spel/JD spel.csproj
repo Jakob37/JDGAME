@@ -115,6 +115,7 @@
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaPool.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaSkott.cs" />
     <Compile Include="Spelobjekt\Skott\SpelarSkott\BigStoneSkott.cs" />
+    <Compile Include="States\RunningStates\RunningState.cs" />
     <Compile Include="Utils\BackgroundSprite.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\LevelMenyExitKnapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level3Knapp.cs" />
@@ -129,7 +130,7 @@
     <Compile Include="Spelobjekt\Skott\EnemySkott\BigEnemyStone.cs" />
     <Compile Include="Spelobjekt\Skott\SpelarSkott\PowerSkott.cs" />
     <Compile Include="Spelobjekt\Skott\SpelarSkott\SpelarSkott.cs" />
-    <Compile Include="States\HowToPlayState.cs" />
+    <Compile Include="States\RunningStates\HowToPlayState.cs" />
     <Compile Include="Hämtade klasser\Animation.cs" />
     <Compile Include="Knappar\Clickable.cs" />
     <Compile Include="Knappar\CollisionDetection.cs" />
@@ -153,9 +154,10 @@
     <Compile Include="Hämtade klasser\Sprite.cs" />
     <Compile Include="Spelobjekt\SpelObjekt.cs" />
     <Compile Include="States\LevelMenyState.cs" />
-    <Compile Include="States\LevelState.cs" />
+    <Compile Include="States\RunningStates\LevelState.cs" />
     <Compile Include="States\MenyState.cs" />
     <Compile Include="States\State.cs" />
+    <Compile Include="Utils\ControlManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

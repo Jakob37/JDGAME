@@ -9,7 +9,7 @@ namespace JD_spel
     class MinFiende : Fiende
     {
         private int skjutTimer;
-        public MinFiende(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public MinFiende(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(117, 0, 18, 27));

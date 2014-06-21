@@ -14,7 +14,7 @@ namespace JD_spel
         private int minTimer;
         private int skjutTimer2;
         private int antalSkottKvar;
-        public FirstBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public FirstBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
             //importera ny spriteSheet
