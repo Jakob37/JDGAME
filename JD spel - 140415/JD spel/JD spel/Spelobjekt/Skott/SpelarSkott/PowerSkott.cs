@@ -13,7 +13,7 @@ namespace JD_spel
         
 
         //Konstruktor. Anropas när ett skott skapas.
-        public PowerSkott(Game1 game, Sprite spriteSheet, State presentState)
+        public PowerSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
             : base(game, spriteSheet, presentState)
         {
             this.game = game;

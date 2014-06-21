@@ -9,8 +9,8 @@ namespace JD_spel
     class BigStoneSkott : SpelarSkott
     {
         private List<SpelObjekt> oneTimeDamageLista;
-        
-        public BigStoneSkott(Game1 game, Sprite spriteSheet, State presentState)
+
+        public BigStoneSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
             : base(game, spriteSheet, presentState)
         {
             this.game = game;

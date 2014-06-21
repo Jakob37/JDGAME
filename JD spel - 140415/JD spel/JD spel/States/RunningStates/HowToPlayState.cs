@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace JD_spel
 {
-    public class HowToPlayState : State
+    public class HowToPlayState : RunningState
     {
         private Sprite spriteSheet;
         private SpriteFont font;

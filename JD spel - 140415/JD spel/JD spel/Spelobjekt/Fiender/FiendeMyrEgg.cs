@@ -12,7 +12,7 @@ namespace JD_spel
         private int spawnCounter;
         private int numberOfAnts;
 
-        public FiendeMyrEgg(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public FiendeMyrEgg(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(188, 52, 40, 40));

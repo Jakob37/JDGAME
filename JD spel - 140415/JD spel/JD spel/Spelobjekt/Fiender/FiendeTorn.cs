@@ -11,8 +11,8 @@ namespace JD_spel
     {
         private KeyboardState keyboardState;
         private int skjutTimer;
-        
-        public FiendeTorn(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+
+        public FiendeTorn(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(50, 0, 29, 29));

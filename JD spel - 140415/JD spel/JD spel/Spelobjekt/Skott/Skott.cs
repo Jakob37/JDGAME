@@ -11,7 +11,7 @@ namespace JD_spel
     {
         protected float range = 1000;
 
-        public Skott(Game1 game, Sprite spriteSheet, State presentState)
+        public Skott(Game1 game, Sprite spriteSheet, RunningState presentState)
             : base(game, spriteSheet, presentState)
         {
             lever = true;

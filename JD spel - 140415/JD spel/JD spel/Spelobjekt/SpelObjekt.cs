@@ -98,10 +98,10 @@ namespace JD_spel
         private const float repellingForce = 1f;
 
         protected Random random;
-        protected State presentState;
+        protected RunningState presentState;
         #endregion
 
-        public SpelObjekt(Game1 game, Sprite spriteSheet, State presentState)
+        public SpelObjekt(Game1 game, Sprite spriteSheet, RunningState presentState)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;

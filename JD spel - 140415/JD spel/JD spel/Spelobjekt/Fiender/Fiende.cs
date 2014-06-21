@@ -18,7 +18,7 @@ namespace JD_spel
         protected Gubbe gubbe;
         protected FiendeMovement movement;
 
-        public Fiende(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public Fiende(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, presentState)
         { 
             this.gubbe = gubbe;

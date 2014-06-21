@@ -9,7 +9,7 @@ namespace JD_spel
     class StoneTower : Fiende
     {
         private int skjutTimer;
-        public StoneTower(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public StoneTower(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base (game, spriteSheet, gubbe, presentState)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(275, 7, 39, 39));

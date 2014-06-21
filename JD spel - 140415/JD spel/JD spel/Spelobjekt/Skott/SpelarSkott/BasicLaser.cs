@@ -9,7 +9,7 @@ namespace JD_spel
 {
     class BasicLaser : SpelarSkott
     {
-        public BasicLaser(Game1 game, Sprite spriteSheet, State presentState)
+        public BasicLaser(Game1 game, Sprite spriteSheet, RunningState presentState)
             : base(game, spriteSheet, presentState)
         {
             this.game = game;

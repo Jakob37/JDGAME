@@ -8,8 +8,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace JD_spel
 {
-    public class LevelState : State
+    public class LevelState : RunningState
     {
+        private enum PlayState {
+            running,
+            win,
+            fail
+        }
+
         private Sprite spriteSheet;
         private Gubbe gubbe;
 
@@ -18,6 +24,8 @@ namespace JD_spel
 
         private SpriteFont font;
         private BackgroundSprite backgroundSprite;
+
+        private PlayState playState;
 
         public LevelState(Game1 game, Sprite spriteSheet)
             : base(game)
@@ -28,6 +36,8 @@ namespace JD_spel
 
             Sprite tile = new Sprite(game.Content.Load<Texture2D>("Tiles/MudTile"));
             backgroundSprite = new BackgroundSprite(game.Window.ClientBounds.Width, game.Window.ClientBounds.Height, tile);
+
+            playState = PlayState.running;
         }
 
         public override void Initialize()
@@ -193,8 +203,23 @@ namespace JD_spel
 
         public override void Uppdatera(GameTime gameTime)
         {
-            base.Uppdatera(gameTime);
-            Escape();
+            switch (playState)
+            {
+                case PlayState.running:
+                    {
+                        base.Uppdatera(gameTime);
+                        Escape();
+                        break;
+                    }
+                case PlayState.win:
+                    {
+                        break;
+                    }
+                case PlayState.fail:
+                    {
+                        break;
+                    }
+            }
         }
 
         private void Escape()
@@ -217,8 +242,6 @@ namespace JD_spel
             spriteBatch.DrawString(font, "Energi: " + gubbe.currentEnergi.ToString(), new Vector2(30, 50), Color.Blue, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
             spriteBatch.DrawString(font, "Shield: " + gubbe.GetSpelarShield().ToString(), new Vector2(30, 70), Color.LightGreen, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
             spriteBatch.DrawString(font, "Vapen: " + gubbe.GetSpelarMagi().ToString(), new Vector2(30, 90), Color.Yellow, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
-        }
-
-        
+        }   
     }
 }

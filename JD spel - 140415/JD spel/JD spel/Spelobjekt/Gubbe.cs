@@ -32,7 +32,8 @@ namespace JD_spel
         //private Boolean summon;
 
         //Konstruktor, som körs när gubben skapas
-        public Gubbe(Game1 game, Sprite spriteSheet, State presentState) : base(game, spriteSheet, presentState)
+        public Gubbe(Game1 game, Sprite spriteSheet, RunningState presentState)
+            : base(game, spriteSheet, presentState)
         {
             this.game = game;
 

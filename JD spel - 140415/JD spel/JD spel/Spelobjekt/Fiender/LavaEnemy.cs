@@ -9,7 +9,7 @@ namespace JD_spel
     class LavaEnemy : Fiende
     {
         private int skjutTimer;
-        public LavaEnemy(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public LavaEnemy(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(249, 5, 20, 20));
