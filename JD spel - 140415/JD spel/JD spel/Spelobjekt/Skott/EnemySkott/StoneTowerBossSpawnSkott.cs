@@ -9,8 +9,8 @@ namespace JD_spel
     class StoneTowerBossSpawnSkott : FiendeSkott
     {
         private int skjutTimer;
-        public StoneTowerBossSpawnSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public StoneTowerBossSpawnSkott(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
@@ -23,9 +23,10 @@ namespace JD_spel
         }
         public override void OnDeath()
         {
-            StoneTowerBossSpawnedTower s = new StoneTowerBossSpawnedTower(game, spriteSheet, presentState);
+            StoneTowerBossSpawnedTower s = new StoneTowerBossSpawnedTower(game, spriteSheet);
+            s.Initialize(runningState);
             s.SkjutSkott(this, riktning);
-            presentState.addObjektLista.Add(s);
+            runningState.addObjektLista.Add(s);
         }
         public override void Uppdatera(GameTime gameTime)
         {
