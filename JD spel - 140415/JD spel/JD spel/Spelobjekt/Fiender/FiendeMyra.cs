@@ -21,7 +21,7 @@ namespace JD_spel
             }
         }
         
-        private Sprite sprite;
+        
         private Vector2 center;
 
         private double eggLayingChance = 0.0004;

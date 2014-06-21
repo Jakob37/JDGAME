@@ -36,20 +36,20 @@ namespace JD_spel
             Vector2 riktningRight = new Vector2(1, 0);
             if (stoneTimer >= 1500)
             {
-                BigEnemyStone s1 = new BigEnemyStone(game, spriteSheet, presentState);
-                s1.SkjutSkott(Position, riktningUp);
+                StoneTowerBossStenBumling s1 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                s1.SkjutSkott(this, riktningUp);
                 presentState.addObjektLista.Add(s1);
 
-                BigEnemyStone s2 = new BigEnemyStone(game, spriteSheet, presentState);
-                s2.SkjutSkott(Position, riktningDown);
+                StoneTowerBossStenBumling s2 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                s2.SkjutSkott(this, riktningDown);
                 presentState.addObjektLista.Add(s2);
 
-                BigEnemyStone s3 = new BigEnemyStone(game, spriteSheet, presentState);
-                s3.SkjutSkott(Position, riktningLeft);
+                StoneTowerBossStenBumling s3 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                s3.SkjutSkott(this, riktningLeft);
                 presentState.addObjektLista.Add(s3);
 
-                BigEnemyStone s4 = new BigEnemyStone(game, spriteSheet, presentState);
-                s4.SkjutSkott(Position, riktningRight);
+                StoneTowerBossStenBumling s4 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                s4.SkjutSkott(this, riktningRight);
                 presentState.addObjektLista.Add(s4);
 
                 stoneTimer = 0;
@@ -63,8 +63,8 @@ namespace JD_spel
             }
             if (antalSkottKvar >= 1 && skjutTimer3 >= 200)
             {
-                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
-                s.SkjutSkott(Position, riktning);
+                StoneTowerBossSkott s = new StoneTowerBossSkott(game, spriteSheet, presentState);
+                s.SkjutSkott(this, riktning);
                 game.levelState.addObjektLista.Add(s);
                 skjutTimer3 = 0;
                 antalSkottKvar -= 1;
