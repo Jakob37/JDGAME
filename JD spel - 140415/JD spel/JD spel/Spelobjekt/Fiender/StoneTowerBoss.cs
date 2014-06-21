@@ -12,7 +12,7 @@ namespace JD_spel
         private int skjutTimer2;
         private int skjutTimer3;
         private int antalSkottKvar;
-        public StoneTowerBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, State presentState)
+        public StoneTowerBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(394,4,70,70));

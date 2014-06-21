@@ -8,7 +8,7 @@ namespace JD_spel
 {
     class StoneTowerBossSkott : FiendeSkott
     {
-        public StoneTowerBossSkott(Game1 game, Sprite spriteSheet, State presentState)
+        public StoneTowerBossSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
             : base(game, spriteSheet, presentState)
         {
             this.game = game;
