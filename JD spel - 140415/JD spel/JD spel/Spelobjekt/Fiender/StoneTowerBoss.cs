@@ -11,6 +11,7 @@ namespace JD_spel
         private int stoneTimer;
         private int skjutTimer2;
         private int skjutTimer3;
+        private int skjutTimer4;
         private int antalSkottKvar;
         public StoneTowerBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
             : base(game, spriteSheet, gubbe, presentState)
@@ -56,6 +57,7 @@ namespace JD_spel
             }
             skjutTimer2 += gameTime.ElapsedGameTime.Milliseconds;
             skjutTimer3 += gameTime.ElapsedGameTime.Milliseconds;
+            skjutTimer4 += gameTime.ElapsedGameTime.Milliseconds;
             if (lever && skjutTimer2 >= 3000 && antalSkottKvar <= 0)
             {
                 antalSkottKvar = 5;
@@ -69,6 +71,15 @@ namespace JD_spel
                 skjutTimer3 = 0;
                 antalSkottKvar -= 1;
             }
+            
+            if (skjutTimer4 >= 12000)
+            {
+                StoneTowerBossSpawnSkott s = new StoneTowerBossSpawnSkott(game, spriteSheet, presentState);
+                s.SkjutSkott(this, riktning);
+                game.levelState.addObjektLista.Add(s);               
+                skjutTimer4 = 0;
+            }
+            
         }
     }
 }

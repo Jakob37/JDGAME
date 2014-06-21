@@ -20,6 +20,7 @@ lava pöl	(344,3,38,35)
 stenbumling	(324,21,13,13)
 boss Stenbumling(329,36,20,20)
 boss skott	(354,42,5,5)
+boss spawned	(370,48,20,20)
 
 Startknapp	(0,50,80,40)
 Exitknapp	(0,90,80,40)

@@ -116,6 +116,8 @@
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaPool.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\LavaSkott.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\StoneTowerBossSkott.cs" />
+    <Compile Include="Spelobjekt\Skott\EnemySkott\StoneTowerBossSpawnedTower.cs" />
+    <Compile Include="Spelobjekt\Skott\EnemySkott\StoneTowerBossSpawnSkott.cs" />
     <Compile Include="Spelobjekt\Skott\EnemySkott\StoneTowerBossStenBumling.cs" />
     <Compile Include="Spelobjekt\Skott\SpelarSkott\BigStoneSkott.cs" />
     <Compile Include="States\RunningStates\RunningState.cs" />
