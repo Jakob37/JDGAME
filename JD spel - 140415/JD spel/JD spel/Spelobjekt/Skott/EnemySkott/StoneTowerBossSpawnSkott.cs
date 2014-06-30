@@ -23,6 +23,11 @@ namespace JD_spel
         }
         public override void OnDeath()
         {
+            //FiendeTorn torn = new FiendeTorn(game, spriteSheet);
+            //torn.Initialize(runningState);
+            //torn.Position = position;
+            //runningState.addObjektLista.Add(torn);
+
             StoneTowerBossSpawnedTower s = new StoneTowerBossSpawnedTower(game, spriteSheet);
             s.Initialize(runningState);
             s.SkjutSkott(this, riktning);
