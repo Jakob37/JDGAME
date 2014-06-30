@@ -9,8 +9,8 @@ namespace JD_spel
     class StoneTowerBossSpawnedTower : Fiende
     {
         private int skjutTimer;
-        public StoneTowerBossSpawnedTower(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public StoneTowerBossSpawnedTower(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
@@ -19,7 +19,7 @@ namespace JD_spel
             Position = new Vector2(-100, -100);
             movement = FiendeMovement.Follow;
             hastighet = 0;
-            liv = 1000;
+            liv = 100;
             skada = 1;
         }
         public override void Uppdatera(GameTime gameTime)
@@ -32,7 +32,7 @@ namespace JD_spel
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (skjutTimer >= 3000)
             {
-                StoneTowerBossSkott s = new StoneTowerBossSkott(game, spriteSheet, presentState);
+                StoneTowerBossSkott s = new StoneTowerBossSkott(game, spriteSheet);
                 s.SkjutSkott(this, riktning);
                 game.levelState.addObjektLista.Add(s);
                 skjutTimer = 0;

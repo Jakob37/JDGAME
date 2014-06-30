@@ -20,8 +20,9 @@ namespace JD_spel
             position = new Vector2(-100, -100);
             hastighet = 2;
             liv = 10000;
-            skada = 200;
+            skada = 100;
             energiKostnad = 50;
+            range = 400;
             oneTimeDamageLista = new List<SpelObjekt>();
         }
 

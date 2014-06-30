@@ -5,3 +5,5 @@ Content\menyFont.xnb
 Content\howToPlayFont.xnb
 Content\HappySong.xnb
 Content\HappySong.wma
+Content\TheBossSong.xnb
+Content\TheBossSong.wma

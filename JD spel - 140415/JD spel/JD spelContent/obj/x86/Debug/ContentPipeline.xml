@@ -56,6 +56,16 @@
       <Extra>C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\HappySong.wma</Extra>
       <Time>2014-05-04T12:01:58.5347132+02:00</Time>
     </Item>
+    <Item>
+      <Source>TheBossSong.mp3</Source>
+      <Name>TheBossSong</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\TheBossSong.xnb</Output>
+      <Extra>C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\TheBossSong.wma</Extra>
+      <Time>2014-06-30T11:22:55.5586979+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

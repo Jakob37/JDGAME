@@ -278,3 +278,5 @@ C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\D
 C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\HappySong.wma
 C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\Tiles\MudTile.xnb
 C:\Users\Jakob\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\Tiles\MudTile.xnb
+C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\TheBossSong.xnb
+C:\Users\user\Documents\GitHub\JDGAME\JD spel - 140415\JD spel\JD spel\bin\x86\Debug\Content\TheBossSong.wma

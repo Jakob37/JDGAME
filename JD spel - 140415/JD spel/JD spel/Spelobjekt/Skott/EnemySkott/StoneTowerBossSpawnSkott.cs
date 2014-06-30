@@ -23,10 +23,15 @@ namespace JD_spel
         }
         public override void OnDeath()
         {
-            StoneTowerBossSpawnedTower s = new StoneTowerBossSpawnedTower(game, spriteSheet);
-            s.Initialize(runningState);
-            s.SkjutSkott(this, riktning);
-            runningState.addObjektLista.Add(s);
+            StoneTowerBossSpawnedTower f1 = new StoneTowerBossSpawnedTower(game, spriteSheet);
+            f1.Initialize(runningState);
+            f1.Position = position;
+            runningState.addObjektLista.Add(f1);
+            
+
+            //StoneTowerBossSpawnedTower s = new StoneTowerBossSpawnedTower(game, spriteSheet);
+            //s.SkjutSkott(this, riktning);
+            //presentState.addObjektLista.Add(s);
         }
         public override void Uppdatera(GameTime gameTime)
         {

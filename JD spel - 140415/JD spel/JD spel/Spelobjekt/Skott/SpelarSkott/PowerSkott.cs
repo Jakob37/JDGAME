@@ -25,7 +25,7 @@ namespace JD_spel
             liv = 1;
             skada = 30;
             energiKostnad = 8;
-            range = 300;
+            range = 400;
         }
         
         

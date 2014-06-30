@@ -21,7 +21,7 @@ namespace JD_spel
             bild = spriteSheet.GetSubSprite(new Rectangle(142, 2, 32, 35));
             hastighet = 2f;
             movement = FiendeMovement.Follow;
-            liv = 1500;
+            liv = 750;
             skada = 1;
 
             Random random = new Random();

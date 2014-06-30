@@ -21,7 +21,7 @@ namespace JD_spel
             movement = FiendeMovement.Common;
             
             liv = 50;
-            skada = 1;
+            skada = 3;
 
             riktning = new Vector2((float)(random.NextDouble() * 2 - 1),
                 (float)(random.NextDouble() * 2 - 1));
