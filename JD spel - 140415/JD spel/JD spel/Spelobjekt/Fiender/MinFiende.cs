@@ -9,8 +9,8 @@ namespace JD_spel
     class MinFiende : Fiende
     {
         private int skjutTimer;
-        public MinFiende(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public MinFiende(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(117, 0, 18, 27));
             hastighet = 1.5F;
@@ -36,9 +36,9 @@ namespace JD_spel
             skjutTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (lever && skjutTimer >= 5000)
             {
-                Mina s = new Mina(game, spriteSheet, gubbe, presentState);
+                Mina s = new Mina(game, spriteSheet);
                 s.Position = Position;
-                presentState.addObjektLista.Add(s);
+                runningState.addObjektLista.Add(s);
                 skjutTimer = 0;
             }
         }

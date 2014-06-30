@@ -13,8 +13,8 @@ namespace JD_spel
         private int skjutTimer3;
         private int skjutTimer4;
         private int antalSkottKvar;
-        public StoneTowerBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public StoneTowerBoss(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(394,4,70,70));
             hastighet = 0;
@@ -37,21 +37,25 @@ namespace JD_spel
             Vector2 riktningRight = new Vector2(1, 0);
             if (stoneTimer >= 1500)
             {
-                StoneTowerBossStenBumling s1 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                StoneTowerBossStenBumling s1 = new StoneTowerBossStenBumling(game, spriteSheet, runningState);
+                s1.Initialize(runningState);
                 s1.SkjutSkott(this, riktningUp);
-                presentState.addObjektLista.Add(s1);
+                runningState.addObjektLista.Add(s1);
 
-                StoneTowerBossStenBumling s2 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                StoneTowerBossStenBumling s2 = new StoneTowerBossStenBumling(game, spriteSheet, runningState);
+                s2.Initialize(runningState);
                 s2.SkjutSkott(this, riktningDown);
-                presentState.addObjektLista.Add(s2);
+                runningState.addObjektLista.Add(s2);
 
-                StoneTowerBossStenBumling s3 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                StoneTowerBossStenBumling s3 = new StoneTowerBossStenBumling(game, spriteSheet, runningState);
+                s3.Initialize(runningState);
                 s3.SkjutSkott(this, riktningLeft);
-                presentState.addObjektLista.Add(s3);
+                runningState.addObjektLista.Add(s3);
 
-                StoneTowerBossStenBumling s4 = new StoneTowerBossStenBumling(game, spriteSheet, presentState);
+                StoneTowerBossStenBumling s4 = new StoneTowerBossStenBumling(game, spriteSheet, runningState);
+                s4.Initialize(runningState);
                 s4.SkjutSkott(this, riktningRight);
-                presentState.addObjektLista.Add(s4);
+                runningState.addObjektLista.Add(s4);
 
                 stoneTimer = 0;
             }
@@ -65,7 +69,7 @@ namespace JD_spel
             }
             if (antalSkottKvar >= 1 && skjutTimer3 >= 200)
             {
-                StoneTowerBossSkott s = new StoneTowerBossSkott(game, spriteSheet, presentState);
+                StoneTowerBossSkott s = new StoneTowerBossSkott(game, spriteSheet);
                 s.SkjutSkott(this, riktning);
                 game.levelState.addObjektLista.Add(s);
                 skjutTimer3 = 0;
@@ -74,7 +78,8 @@ namespace JD_spel
             
             if (skjutTimer4 >= 12000)
             {
-                StoneTowerBossSpawnSkott s = new StoneTowerBossSpawnSkott(game, spriteSheet, presentState);
+                StoneTowerBossSpawnSkott s = new StoneTowerBossSpawnSkott(game, spriteSheet);
+                s.Initialize(runningState);
                 s.SkjutSkott(this, riktning);
                 game.levelState.addObjektLista.Add(s);               
                 skjutTimer4 = 0;

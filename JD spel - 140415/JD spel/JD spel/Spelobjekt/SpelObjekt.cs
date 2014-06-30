@@ -98,10 +98,10 @@ namespace JD_spel
         private const float repellingForce = 1f;
 
         protected Random random;
-        protected RunningState presentState;
+        protected RunningState runningState;
         #endregion
 
-        public SpelObjekt(Game1 game, Sprite spriteSheet, RunningState presentState)
+        public SpelObjekt(Game1 game, Sprite spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
@@ -113,7 +113,11 @@ namespace JD_spel
             hastighet = 0;
 
             random = new Random();
-            this.presentState = presentState;
+        }
+
+        public virtual void Initialize(RunningState runningState)
+        {
+            this.runningState = runningState;
         }
 
         public virtual void Uppdatera(GameTime gameTime)

@@ -6,32 +6,12 @@ using Microsoft.Xna.Framework;
 
 namespace JD_spel
 {
-    class Level5Knapp : Clickable
+    class Level5Knapp : LevelKnapp
     {
-        Game1 game;
-
-        public Level5Knapp(Game1 game, Sprite spriteSheet, Vector2 position)
-            : base(spriteSheet, position)
+        public Level5Knapp(Game1 game, Sprite spriteSheet, Vector2 position, Level level)
+            : base(game, spriteSheet, position, level)
         {
             displaySprite = spriteSheet.GetSubSprite(new Rectangle(80, 170, 50, 30));
-            this.game = game;
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-
-            if (IsLeftClicked())
-            {
-                ClickLogic();
-            }
-        }
-
-        private void ClickLogic()
-        {
-            game.levelState.Initialize();
-            game.levelState.SetLevel(5);
-            game.runningState = game.levelState;
         }
     }
 }

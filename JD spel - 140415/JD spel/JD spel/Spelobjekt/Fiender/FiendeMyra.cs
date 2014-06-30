@@ -26,8 +26,8 @@ namespace JD_spel
 
         private double eggLayingChance = 0.0004;
 
-        public FiendeMyra(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public FiendeMyra(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(183, 0, 30, 46));
 
@@ -61,11 +61,12 @@ namespace JD_spel
 
         private void LayEgg()
         {
-            FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet, gubbe, presentState);
+            FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet);
+            egg.Initialize(runningState);
             egg.Position = Position;
             egg.SetExternalRandom(random);
             egg.SetRandomDirection();
-            presentState.addObjektLista.Add(egg);
+            runningState.addObjektLista.Add(egg);
         }
 
         public override void Rita(SpriteBatch spriteBatch)

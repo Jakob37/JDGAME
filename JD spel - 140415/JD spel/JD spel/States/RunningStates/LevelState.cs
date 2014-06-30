@@ -27,6 +27,8 @@ namespace JD_spel
 
         private PlayState playState;
 
+        private Level currentLevel;
+
         public LevelState(Game1 game, Sprite spriteSheet)
             : base(game)
         {
@@ -44,162 +46,18 @@ namespace JD_spel
         { 
             base.Initialize();
 
-            gubbe = new Gubbe(game, spriteSheet, this);
+            playState = PlayState.running;
+            spelObjektLista.Clear();
+            gubbe = game.Player1;
+            gubbe.Initialize(this);
             spelObjektLista.Add(gubbe);
         }
 
-        public void SetLevel(int level)
+        public void MakeLevel(Level level)
         {
-            switch (level)
-            {
-                case 1:
-                    {
-                        MakeLevel1();
-                        break;
-                    }
-                case 2:
-                    {
-                        MakeLevel2();
-                        break;
-                    }
-                case 3:
-                    {
-                        MakeLevel3();
-                        break;
-                    }
-                case 4:
-                    {
-                        MakeLevel4();
-                        break;
-                    }
-                case 5:
-                    {
-                        MakeLevel5();
-                        break;
-                    }
-                case 6:
-                    {
-                        MakeLevel6();
-                        break;
-                    }
-                case 00:
-                    {
-                        MakeTestLevel();
-                        break;
-                    }
-            }
+            spelObjektLista.AddRange(level.GetLevel());
+            currentLevel = level;
         }
-
-        #region MakeLevel
-        private void MakeLevel1()
-        {
-            //FiendeTorn
-            FiendeTorn torn1 = new FiendeTorn(game, spriteSheet, gubbe, this);
-            torn1.Position = new Vector2(300, 300);
-            spelObjektLista.Add(torn1);
-            FiendeTorn torn2 = new FiendeTorn(game, spriteSheet, gubbe, this);
-            torn2.Position = new Vector2(700, 300);
-            spelObjektLista.Add(torn2);
-            FiendeTorn torn3 = new FiendeTorn(game, spriteSheet, gubbe, this);
-            torn3.Position = new Vector2(300, 500);
-            spelObjektLista.Add(torn3);
-            FiendeTorn torn4 = new FiendeTorn(game, spriteSheet, gubbe, this);
-            torn4.Position = new Vector2(700, 500);
-            spelObjektLista.Add(torn4);
-
-            //VanligFiende
-            
-            for (int n = 0; n < 10; n++)
-            {
-                VanligFiende f1 = new VanligFiende(game, spriteSheet, gubbe, this);
-                f1.Position = new Vector2(random1.Next(870), random1.Next(670));
-                spelObjektLista.Add(f1);
-            }
-
-            //MinGubbe
-            Random random2 = new Random();
-            for (int n = 0; n < 5; n++)
-            {
-                MinFiende f1 = new MinFiende(game, spriteSheet, gubbe, this);
-                f1.Position = new Vector2(random2.Next(870), random2.Next(670));
-                spelObjektLista.Add(f1);
-            }
-        }
-
-        private void MakeLevel2()
-        {
-            //Boss
-            Random random1 = new Random();
-            FirstBoss f1 = new FirstBoss(game, spriteSheet, gubbe, this);
-            f1.Position = new Vector2(random1.Next(870), random1.Next(670));
-            spelObjektLista.Add(f1);
-            
-        }
-
-        private void MakeLevel3()
-        {
-            //VanligFiende
-        
-            for (int n = 0; n < 50; n++)
-            {
-                VanligFiende f1 = new VanligFiende(game, spriteSheet, gubbe, this);
-                f1.Position = new Vector2(random1.Next(870), random1.Next(670));
-                f1.SetRandomDirection(random1);
-                spelObjektLista.Add(f1);
-            }
-        }
-        
-        private void MakeLevel4()
-        {
-            for (int n = 0; n < 10; n++)
-            {
-                FiendeMyra myra = new FiendeMyra(game, spriteSheet, gubbe, this);
-                myra.Position = new Vector2(random1.Next(870), random1.Next(670));
-                myra.SetExternalRandom(random1);
-                myra.SetRandomDirection();
-                spelObjektLista.Add(myra);
-            }
-
-            FiendeMyrEgg egg = new FiendeMyrEgg(game, spriteSheet, gubbe, this);
-            egg.Position = new Vector2(300, 300);
-            spelObjektLista.Add(egg);
-        }
-
-        private void MakeLevel5()
-        {
-            StoneTower torn1 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn1.Position = new Vector2(300, 300);
-            spelObjektLista.Add(torn1);
-            StoneTower torn2 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn2.Position = new Vector2(700, 300);
-            spelObjektLista.Add(torn2);
-            StoneTower torn3 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn3.Position = new Vector2(300, 500);
-            spelObjektLista.Add(torn3);
-            StoneTower torn4 = new StoneTower(game, spriteSheet, gubbe, this);
-            torn4.Position = new Vector2(700, 500);
-            spelObjektLista.Add(torn4);
-        }
-
-        private void MakeLevel6()
-        {
-            for (int n = 0; n < 20; n++)
-            {
-                LavaEnemy f1 = new LavaEnemy(game, spriteSheet, gubbe, this);
-                f1.Position = new Vector2(random1.Next(870), random1.Next(670));
-                f1.SetRandomDirection(random1);
-                spelObjektLista.Add(f1);
-            }
-
-        }
-
-        private void MakeTestLevel()
-        {
-            StoneTowerBoss f1 = new StoneTowerBoss(game, spriteSheet, gubbe, this);
-            f1.Position = new Vector2(300, 300);
-            spelObjektLista.Add(f1);
-        }
-        #endregion
 
         public override void Uppdatera(GameTime gameTime)
         {
@@ -208,19 +66,57 @@ namespace JD_spel
                 case PlayState.running:
                     {
                         base.Uppdatera(gameTime);
-                        Escape();
+                        CheckRunningStatus();
                         break;
                     }
                 case PlayState.win:
                     {
+                        WinLogic();
                         break;
                     }
                 case PlayState.fail:
                     {
+                        FailLogic();
                         break;
                     }
             }
+
+            Escape();
         }
+
+        private void CheckRunningStatus()
+        {
+            if (!gubbe.lever)
+            {
+                playState = PlayState.fail;
+                currentLevel.MarkFail();
+            }
+            else if (HasWon())
+            {
+                playState = PlayState.win;
+                currentLevel.MarkWin();
+            }
+        }
+
+        private Boolean HasWon()
+        {
+            foreach (SpelObjekt obj in spelObjektLista)
+            {
+                if (obj is Fiende)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void WinLogic()
+        { }
+
+        private void FailLogic()
+        { }
+
 
         private void Escape()
         {
@@ -242,6 +138,16 @@ namespace JD_spel
             spriteBatch.DrawString(font, "Energi: " + gubbe.currentEnergi.ToString(), new Vector2(30, 50), Color.Blue, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
             spriteBatch.DrawString(font, "Shield: " + gubbe.GetSpelarShield().ToString(), new Vector2(30, 70), Color.LightGreen, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
             spriteBatch.DrawString(font, "Vapen: " + gubbe.GetSpelarMagi().ToString(), new Vector2(30, 90), Color.Yellow, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+
+            if (playState == PlayState.fail)
+            {
+                spriteBatch.DrawString(font, "YOU LOSE\nPress Escape to return to menu", new Vector2(200, 200), Color.Red, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);    
+            }
+
+            if (playState == PlayState.win)
+            {
+                spriteBatch.DrawString(font, "YOU WIN\nPress Escape to return to menu", new Vector2(400, 300), Color.Red, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+            }
         }   
     }
 }

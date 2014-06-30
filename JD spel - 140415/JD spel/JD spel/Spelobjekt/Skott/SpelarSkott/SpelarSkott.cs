@@ -10,8 +10,8 @@ namespace JD_spel
         protected static int energiKostnad;
         public static int GetEnergiKostnad() { return energiKostnad; }
 
-        public SpelarSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public SpelarSkott(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         { 
             
         }

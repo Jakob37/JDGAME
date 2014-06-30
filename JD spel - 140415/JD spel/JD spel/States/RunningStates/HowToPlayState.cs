@@ -30,7 +30,7 @@ namespace JD_spel
         {
             base.Initialize();
 
-            gubbe = new Gubbe(game, spriteSheet, this);
+            gubbe = new Gubbe(game, spriteSheet);
             spelObjektLista.Add(gubbe);
             knappNerTryckt = 0;
         }
@@ -92,7 +92,7 @@ namespace JD_spel
         {
             if (knappNerTryckt == 2)
             {
-                fiende1 = new VanligFiende(game, spriteSheet, gubbe, this);
+                fiende1 = new VanligFiende(game, spriteSheet);
                 fiende1.Position = new Vector2(300, 300);
                 spelObjektLista.Add(fiende1);
                 fiende1.hastighet = 0;

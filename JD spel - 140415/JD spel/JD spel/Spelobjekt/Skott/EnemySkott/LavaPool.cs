@@ -9,8 +9,8 @@ namespace JD_spel
     class LavaPool : FiendeSkott
     {
         private int livTimer;
-        public LavaPool(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public LavaPool(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;

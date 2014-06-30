@@ -41,8 +41,7 @@ namespace JD_spel
 
         private Boolean isMusicRunning;
 
-        private KeyboardState currentKeyboardState;
-        private KeyboardState previousKeyboardState;
+        public Gubbe Player1;
 
         //Detta körs när spelet skapas
         public Game1()
@@ -64,6 +63,8 @@ namespace JD_spel
             graphics.PreferredBackBufferWidth = 900;
             graphics.PreferredBackBufferHeight = 700;
             graphics.ApplyChanges();
+
+            Player1 = new Gubbe(this, spriteSheet);
 
             levelState = new LevelState(this, spriteSheet);
             levelState.Initialize();
@@ -91,6 +92,7 @@ namespace JD_spel
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             happySong = Content.Load<Song>("HappySong");
+            //happySong = Content.Load<Song>("TheBossSong");
         }
 
         //Denna kommer vi inte använda nu.
@@ -105,22 +107,11 @@ namespace JD_spel
 
             runningState.Uppdatera(gameTime);
 
-            //previousKeyboardState = currentKeyboardState;
-            //currentKeyboardState = Keyboard.GetState();
-
             ControlManager.Uppdatera(gameTime);
-
-            //if (currentKeyboardState.IsKeyDown(Keys.M) && previousKeyboardState.IsKeyUp(Keys.M))
-            //{
-            //    isMusicRunning = ToggleBoolean(isMusicRunning);
-            //
-            //    ControlMusic(isMusicRunning);
-            //}
 
             if (ControlManager.IsKeyPressed(Keys.M))
             {
                 isMusicRunning = ToggleBoolean(isMusicRunning);
-
                 ControlMusic(isMusicRunning);
             }
         }

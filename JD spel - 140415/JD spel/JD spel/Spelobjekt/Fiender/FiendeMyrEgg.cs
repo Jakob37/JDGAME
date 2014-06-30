@@ -12,8 +12,8 @@ namespace JD_spel
         private int spawnCounter;
         private int numberOfAnts;
 
-        public FiendeMyrEgg(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public FiendeMyrEgg(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(188, 52, 40, 40));
             
@@ -49,11 +49,12 @@ namespace JD_spel
         {
             for (int n = 0; n < numberOfAnts; n++)
             {
-                FiendeMyra myra = new FiendeMyra(game, spriteSheet, gubbe, presentState);
+                FiendeMyra myra = new FiendeMyra(game, spriteSheet);
+                myra.Initialize(runningState);
                 myra.Position = Position;
                 myra.SetExternalRandom(random);
                 myra.SetRandomDirection();
-                presentState.addObjektLista.Add(myra);
+                runningState.addObjektLista.Add(myra);
             }
         }
 

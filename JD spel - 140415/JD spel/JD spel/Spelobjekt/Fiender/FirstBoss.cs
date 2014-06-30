@@ -14,8 +14,8 @@ namespace JD_spel
         private int minTimer;
         private int skjutTimer2;
         private int antalSkottKvar;
-        public FirstBoss(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public FirstBoss(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             //importera ny spriteSheet
             bild = spriteSheet.GetSubSprite(new Rectangle(142, 2, 32, 35));
@@ -47,7 +47,7 @@ namespace JD_spel
             }
             if (antalSkottKvar >=1 && skjutTimer2 >= 75)
             {
-                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, presentState);
+                VanligtFiendeSkott s = new VanligtFiendeSkott(game, spriteSheet, runningState);
                 s.SkjutSkott(this, riktning);
                 game.levelState.addObjektLista.Add(s);
                 skjutTimer2 = 0;
@@ -60,7 +60,7 @@ namespace JD_spel
             minTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (lever && minTimer >= 2000)
             {
-                Mina s = new Mina(game, spriteSheet, gubbe, presentState);
+                Mina s = new Mina(game, spriteSheet);
                 s.Position = Position;
                 game.levelState.addObjektLista.Add(s);
                 minTimer = 0;

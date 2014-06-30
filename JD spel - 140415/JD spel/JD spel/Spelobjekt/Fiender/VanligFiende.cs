@@ -13,8 +13,8 @@ namespace JD_spel
 {
     class VanligFiende : Fiende
     {
-        public VanligFiende(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
-            : base(game, spriteSheet, gubbe, presentState)
+        public VanligFiende(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             bild = spriteSheet.GetSubSprite(new Rectangle(0, 0, 21, 25));
             hastighet = 2F;

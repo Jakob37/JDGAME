@@ -15,7 +15,7 @@ namespace JD_spel
         BasicLaser,
         BigStoneSkott
     }
-    class Gubbe : SpelObjekt
+    public class Gubbe : SpelObjekt
     {
         private int maxhastighet;
         private int maxEnergi;
@@ -29,21 +29,29 @@ namespace JD_spel
         public float shield;
         public float GetSpelarShield() { return shield; }
         
-        //private Boolean summon;
-
         //Konstruktor, som körs när gubben skapas
-        public Gubbe(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public Gubbe(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             this.game = game;
+            bild = spriteSheet.GetSubSprite(new Rectangle(25, 0, 15, 29));
+            Setup();
+            drawLayer = 0.5f;
+        }
 
-            hastighet = 5;
+        public override void Initialize(RunningState state)
+        {
+            base.Initialize(state);
+
+            Setup();
+        }
+
+        private void Setup()
+        {
             Position = new Vector2(200, 200);
             lever = true;
             maxhastighet = 4;
-            
-
-            bild = spriteSheet.GetSubSprite(new Rectangle(25, 0, 15, 29));
+            hastighet = 5;
             skada = 1;
             liv = 20;
             maxEnergi = 100;
@@ -52,8 +60,6 @@ namespace JD_spel
             valdMagi = SpelarMagi.BasicSkott;
             shield = 30;
             riktning = new Vector2(1, 0);
-            drawLayer = 0.5f;
-            //summon = false;
         }
 
         //Funktioner
@@ -124,9 +130,10 @@ namespace JD_spel
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && previousKeyboardState.IsKeyUp(Keys.LeftShift) && lever
                  && currentEnergi >= energiCost)
             {
-                BasicSkott s = new BasicSkott(game, spriteSheet, presentState);
+                BasicSkott s = new BasicSkott(game, spriteSheet);
                 s.SkjutSkott(this, riktning);
-                presentState.addObjektLista.Add(s);
+                runningState.addObjektLista.Add(s);
+                //game.presentState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
         }
@@ -136,9 +143,9 @@ namespace JD_spel
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && previousKeyboardState.IsKeyUp(Keys.LeftShift) && lever
                  && currentEnergi >= energiCost)
             {
-                PowerSkott s = new PowerSkott(game, spriteSheet, presentState);
+                PowerSkott s = new PowerSkott(game, spriteSheet);
                 s.SkjutSkott(this, riktning);
-                presentState.addObjektLista.Add(s);
+                runningState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
         }
@@ -147,9 +154,9 @@ namespace JD_spel
             int energiCost = 1;
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && lever && currentEnergi >= energiCost)
             {
-                BasicLaser s = new BasicLaser(game, spriteSheet, presentState);
+                BasicLaser s = new BasicLaser(game, spriteSheet);
                 s.SkjutSkott(this, riktning);
-                presentState.addObjektLista.Add(s);
+                runningState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
         }
@@ -159,9 +166,9 @@ namespace JD_spel
             if (currentKeyboardState.IsKeyDown(Keys.LeftShift) && previousKeyboardState.IsKeyUp(Keys.LeftShift) && lever
                  && currentEnergi >= energiCost)
             {
-                BigStoneSkott s = new BigStoneSkott(game, spriteSheet, presentState);
+                BigStoneSkott s = new BigStoneSkott(game, spriteSheet);
                 s.SkjutSkott(this, riktning);
-                presentState.addObjektLista.Add(s);
+                runningState.addObjektLista.Add(s);
                 currentEnergi -= energiCost;
             }
         }

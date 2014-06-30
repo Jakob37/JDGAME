@@ -9,8 +9,8 @@ namespace JD_spel
     class LavaSkott : FiendeSkott
     {
         private int skjutTimer;
-        public LavaSkott(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public LavaSkott(Game1 game, Sprite spriteSheet)
+            : base(game, spriteSheet)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
@@ -23,9 +23,9 @@ namespace JD_spel
         }
         public override void OnDeath()
         {
-            LavaPool s = new LavaPool(game, spriteSheet, presentState);
+            LavaPool s = new LavaPool(game, spriteSheet);
             s.SkjutSkott(this, riktning);
-            presentState.addObjektLista.Add(s);
+            runningState.addObjektLista.Add(s);
         }
         public override void Uppdatera(GameTime gameTime)
         {
