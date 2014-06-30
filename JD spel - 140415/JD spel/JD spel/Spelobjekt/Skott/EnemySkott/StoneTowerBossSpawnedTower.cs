@@ -6,18 +6,18 @@ using Microsoft.Xna.Framework;
 
 namespace JD_spel
 {
-    class StoneTowerBossSpawnedTower : FiendeSkott
+    class StoneTowerBossSpawnedTower : Fiende
     {
         private int skjutTimer;
-        public StoneTowerBossSpawnedTower(Game1 game, Sprite spriteSheet, RunningState presentState)
-            : base(game, spriteSheet, presentState)
+        public StoneTowerBossSpawnedTower(Game1 game, Sprite spriteSheet, Gubbe gubbe, RunningState presentState)
+            : base(game, spriteSheet, gubbe, presentState)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
 
             bild = spriteSheet.GetSubSprite(new Rectangle(370, 48, 20, 20));
             Position = new Vector2(-100, -100);
-            //movement = FiendeMovement.Follow;
+            movement = FiendeMovement.Follow;
             hastighet = 0;
             liv = 1000;
             skada = 1;
