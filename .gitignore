@@ -4,5 +4,6 @@ bin/
 obj/
 *.suo
 *.user
+*Debug*
 
 JD spel.suo
