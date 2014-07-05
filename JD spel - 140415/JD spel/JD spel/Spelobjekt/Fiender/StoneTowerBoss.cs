@@ -76,7 +76,7 @@ namespace JD_spel
                 antalSkottKvar -= 1;
             }
             
-            if (skjutTimer4 >= 1200)
+            if (skjutTimer4 >= 12000)
             {
                 StoneTowerBossSpawnSkott s = new StoneTowerBossSpawnSkott(game, spriteSheet);
                 s.Initialize(runningState);
