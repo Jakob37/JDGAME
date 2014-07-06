@@ -28,7 +28,8 @@ namespace JD_spel
 
         public List<SpelObjekt> GetLevel()
         {
-            return spelObjektLista;
+            List<SpelObjekt> listCopy = new List<SpelObjekt>(spelObjektLista);
+            return listCopy;
         }
 
         public void MarkFail()

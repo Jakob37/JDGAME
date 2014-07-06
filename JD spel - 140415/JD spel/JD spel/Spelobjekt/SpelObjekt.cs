@@ -130,6 +130,11 @@ namespace JD_spel
                 lever = false;
             }
 
+            if (IsOutside())
+            {
+                lever = false;
+            }
+
             SetRadians();
         }
 
@@ -206,5 +211,27 @@ namespace JD_spel
             return true;
         }
 
+        public Boolean IsOutside()
+        {
+            float windowWidth = game.Window.ClientBounds.Width;
+            float windowHeight = game.Window.ClientBounds.Height;
+
+            float width = bild.Width;
+            float height = bild.Height;
+
+            float limit = 100;
+
+            if (PositionX < -limit
+                || PositionY < -limit
+                || PositionX + width > windowWidth + limit
+                || PositionY + height > windowHeight + limit)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

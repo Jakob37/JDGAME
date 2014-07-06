@@ -220,23 +220,23 @@ namespace JD_spel
             float WindowWidth = game.Window.ClientBounds.Width;
             float WindowHeight = game.Window.ClientBounds.Height;
 
-            if (PositionX < 0)
+            if (PositionX < bild.Width / 2)
             {
-                PositionX = 0;
+                PositionX = bild.Width / 2;
             }
-            if (PositionX > WindowWidth - bild.Width)
+            if (PositionX > WindowWidth - bild.Width / 2)
             {
-                PositionX = WindowWidth - bild.Width;
+                PositionX = WindowWidth - bild.Width / 2;
+            }
+
+            if (Position.Y < bild.Height / 2)
+            {
+                PositionY = bild.Height / 2;
             }
             
-            if (Position.Y < 0)
+            if (PositionY > WindowHeight - bild.Height / 2)
             {
-                PositionY = 0;
-            }
-            
-            if (PositionY > WindowHeight - bild.Height)
-            {
-                PositionY = WindowHeight - bild.Height;
+                PositionY = WindowHeight - bild.Height / 2;
             }
         }
 
