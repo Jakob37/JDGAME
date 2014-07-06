@@ -82,7 +82,16 @@ namespace JD_spel
         {
             if (displaySprite != null)
             {
-                spriteBatch.Draw(displaySprite.Texture, position + offset, displaySprite.SourceRectangle, color);
+                spriteBatch.Draw(displaySprite.Texture, 
+                    position + offset, 
+                    displaySprite.SourceRectangle, 
+                    color,
+                    0.0f,
+                    Vector2.Zero,
+                    1f,
+                    SpriteEffects.None,
+                    0.5f
+                    );
             }
         }
 

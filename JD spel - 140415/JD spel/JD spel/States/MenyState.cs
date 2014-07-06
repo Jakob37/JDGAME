@@ -13,6 +13,8 @@ namespace JD_spel
         private List<Clickable> knappar;
         private SpriteFont font;
 
+        //private BackgroundSprite backgroundSprite;
+
         private int textTimer;
         
         public MenyState(Game1 game, Sprite spriteSheet)
@@ -37,6 +39,9 @@ namespace JD_spel
             knappar.Add(howToPlay);
 
             textTimer = 0;
+
+            //Sprite tile = new Sprite(game.Content.Load<Texture2D>("Tiles/GrassTile"));
+            //backgroundSprite = new BackgroundSprite(game.Window.ClientBounds.Width, game.Window.ClientBounds.Height, tile);
         }
 
         public override void Initialize()
@@ -58,10 +63,14 @@ namespace JD_spel
 
         public override void Rita(SpriteBatch spriteBatch)
         {
+            //backgroundSprite.Draw(spriteBatch);
+
             base.Rita(spriteBatch);
 
             if (textTimer > 2000 && textTimer < 5000)
-                spriteBatch.DrawString(font, "League of Legends 2", new Vector2(200, 100), Color.DarkSlateGray);
+                spriteBatch.DrawString(font, "League of Blobs", new Vector2(200, 100), Color.DarkSlateGray, .0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+
+                //spriteBatch.DrawString(font, "League of Legends 2", new Vector2(200, 100), Color.DarkSlateGray);
             
             foreach (Clickable knapp in knappar)
             {

@@ -43,6 +43,8 @@ namespace JD_spel
 
         public Gubbe Player1;
 
+        private BackgroundManager backgroundManager;
+
         //Detta körs när spelet skapas
         public Game1()
         {
@@ -54,6 +56,7 @@ namespace JD_spel
         protected override void Initialize()
         {
             base.Initialize();
+
             IsMouseVisible = true;
 
             spriteSheet = new Sprite(this.Content.Load<Texture2D>("FirstSpriteSheet"));
@@ -82,6 +85,9 @@ namespace JD_spel
 
             isMusicRunning = true;
             ControlMusic(isMusicRunning);
+
+            backgroundManager = new BackgroundManager(this);
+            backgroundManager.ChangeBackground(Background.grass);
 
         }
 
@@ -146,6 +152,8 @@ namespace JD_spel
             //Mellan .Begin() och .End() ritas allt i spelet upp för varje frame
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
+            backgroundManager.Draw(spriteBatch);
+            
             runningState.Rita(spriteBatch);
             
             spriteBatch.End();

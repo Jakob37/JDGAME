@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundManager.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level6Knapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\Level5Knapp.cs" />
     <Compile Include="Knappar\Instanser\LevelMenyState\Levels\LevelKnapp.cs" />

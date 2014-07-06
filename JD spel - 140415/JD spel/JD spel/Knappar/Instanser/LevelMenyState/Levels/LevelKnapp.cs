@@ -61,7 +61,8 @@ namespace JD_spel
             else
                 statusColor = Color.Green;
 
-            spriteBatch.Draw(displaySprite.Texture, position, displaySprite.SourceRectangle, statusColor);
+            base.Draw(spriteBatch);
+            //spriteBatch.Draw(displaySprite.Texture, position, displaySprite.SourceRectangle, statusColor);
         }
 
         public void IncreaseWinCount()
